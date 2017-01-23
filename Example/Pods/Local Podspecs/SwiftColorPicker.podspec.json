@@ -1,0 +1,22 @@
+{
+  "name": "SwiftColorPicker",
+  "version": "0.1.0",
+  "summary": "A short description of SwiftColorPicker.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/<GITHUB_USERNAME>/SwiftColorPicker",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Andrea Antonioni": "andreaantonioni97@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/<GITHUB_USERNAME>/SwiftColorPicker.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SwiftColorPicker/Classes/**/*"
+}

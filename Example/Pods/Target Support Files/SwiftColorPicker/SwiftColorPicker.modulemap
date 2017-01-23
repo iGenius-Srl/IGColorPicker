@@ -1,0 +1,6 @@
+framework module SwiftColorPicker {
+  umbrella header "SwiftColorPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,9 +1,9 @@
 use_frameworks!
 
-target 'ColorPicker_Example' do
-  pod 'ColorPicker', :path => '../'
+target 'SwiftColorPicker_Example' do
+  pod 'SwiftColorPicker', :path => '../'
 
-  target 'ColorPicker_Tests' do
+  target 'SwiftColorPicker_Tests' do
     inherit! :search_paths
 
     
