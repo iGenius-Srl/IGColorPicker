@@ -7,17 +7,24 @@
 //
 
 import UIKit
+import SwiftColorPicker
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, ColorPickerViewDelegateFlowLayout {
 
+    @IBOutlet weak var colorPickerView: ColorPickerView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        colorPickerView.layout = self
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func colorPickerView(_ colorPickerView: ColorPickerView, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: 100, height: 100)
     }
 
 }

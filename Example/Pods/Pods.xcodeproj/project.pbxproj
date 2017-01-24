@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0904C2C5B969FEDEF3595E577B3EFF18 /* Pods-SwiftColorPicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F0E38FD7CA78526B5AC62212FB24D18 /* Pods-SwiftColorPicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1757F2B71E378D9C005A0792 /* ColorPickerViewDelegateFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757F2B61E378D9C005A0792 /* ColorPickerViewDelegateFlowLayout.swift */; };
 		65B10C4A1E3693B300988DC4 /* ColorPickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B10C491E3693B300988DC4 /* ColorPickerCell.swift */; };
 		65B10C4C1E3693D400988DC4 /* ColorPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65B10C4B1E3693D400988DC4 /* ColorPickerView.swift */; };
 		875F0DCE7A892CD069544A95C83E0076 /* Pods-SwiftColorPicker_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F30863B51471F83F4F1DBBD32565B40E /* Pods-SwiftColorPicker_Example-dummy.m */; };
@@ -34,6 +35,7 @@
 		06F9FB73BCE44756AE114A96107A2E50 /* SwiftColorPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftColorPicker.modulemap; sourceTree = "<group>"; };
 		0C3524160DB75BF62F3EFEBC03BE6323 /* SwiftColorPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftColorPicker-dummy.m"; sourceTree = "<group>"; };
 		153FE99C9DDBED9E2A852C2A0BB7EB17 /* Pods-SwiftColorPicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftColorPicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
+		1757F2B61E378D9C005A0792 /* ColorPickerViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickerViewDelegateFlowLayout.swift; sourceTree = "<group>"; };
 		3766A0E6125CC702896E0E6366519A1A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3B605E0DB995DA7BCA91530AE2804B1E /* Pods-SwiftColorPicker_Tests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftColorPicker_Tests-acknowledgements.plist"; sourceTree = "<group>"; };
 		46CCDE65EAC092831AF4CFD7695A481B /* SwiftColorPicker-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftColorPicker-umbrella.h"; sourceTree = "<group>"; };
@@ -181,6 +183,7 @@
 			isa = PBXGroup;
 			children = (
 				65B10C491E3693B300988DC4 /* ColorPickerCell.swift */,
+				1757F2B61E378D9C005A0792 /* ColorPickerViewDelegateFlowLayout.swift */,
 				65B10C4B1E3693D400988DC4 /* ColorPickerView.swift */,
 			);
 			path = Classes;
@@ -367,6 +370,7 @@
 				B5A7CB43D7756E05A16EA236AB4710A2 /* SwiftColorPicker-dummy.m in Sources */,
 				65B10C4A1E3693B300988DC4 /* ColorPickerCell.swift in Sources */,
 				65B10C4C1E3693D400988DC4 /* ColorPickerView.swift in Sources */,
+				1757F2B71E378D9C005A0792 /* ColorPickerViewDelegateFlowLayout.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

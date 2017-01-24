@@ -35,6 +35,9 @@
                             <constraint firstItem="K4J-IX-7Pu" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="1:2" id="zaj-NK-2Vf"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="colorPickerView" destination="K4J-IX-7Pu" id="fe7-CS-YEl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
