@@ -27,8 +27,6 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         let layout = UICollectionViewFlowLayout()
         layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         layout.scrollDirection = .horizontal
-        layout.minimumInteritemSpacing = 10
-        //        layout.itemSize = CGSize(width: 48, height: 48)
         
         let collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
         collectionView.delegate = self
@@ -41,6 +39,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     }()
     
     open var layoutDelegate: ColorPickerViewDelegateFlowLayout?
+    open var delegate: ColorPickerViewDelegate?
     
     open override func layoutSubviews() {
         self.addSubview(collectionView)
@@ -65,6 +64,12 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         cell.backgroundColor = colors[indexPath.item]
         
         return cell
+    }
+    
+    // MARK: - UICollectionViewDelegate
+    
+    public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        delegate?.colorPickerView(self, didSelectItemAt: indexPath)
     }
     
     // MARK: - UICollectionViewDelegateFlowLayout
