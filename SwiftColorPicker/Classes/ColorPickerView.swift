@@ -40,7 +40,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         return collectionView
     }()
     
-    open var layout: ColorPickerViewDelegateFlowLayout?
+    open var layoutDelegate: ColorPickerViewDelegateFlowLayout?
     
     open override func layoutSubviews() {
         self.addSubview(collectionView)
@@ -68,10 +68,25 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     }
     
     // MARK: - UICollectionViewDelegateFlowLayout
+    
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if let layout = layout, let sizeForItemAt = layout.colorPickerView?(self, sizeForItemAt: indexPath) {
+        if let layoutDelegate = layoutDelegate, let sizeForItemAt = layoutDelegate.colorPickerView?(self, sizeForItemAt: indexPath) {
             return sizeForItemAt
         }
         return CGSize(width: 48, height: 48)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        if let layoutDelegate = layoutDelegate, let minimumLineSpacingForSectionAt = layoutDelegate.colorPickerView?(self, minimumLineSpacingForSectionAt: section) {
+            return minimumLineSpacingForSectionAt
+        }
+        return 0
+    }
+
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        if let layoutDelegate = layoutDelegate, let minimumInteritemSpacingForSectionAt = layoutDelegate.colorPickerView?(self, minimumInteritemSpacingForSectionAt: section) {
+            return minimumInteritemSpacingForSectionAt
+        }
+        return 0
     }
 }

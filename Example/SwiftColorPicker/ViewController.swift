@@ -15,7 +15,7 @@ class ViewController: UIViewController, ColorPickerViewDelegateFlowLayout {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        colorPickerView.layout = self
+        colorPickerView.layoutDelegate = self
     }
     
     override func didReceiveMemoryWarning() {
