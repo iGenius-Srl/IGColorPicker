@@ -9,7 +9,7 @@
 import Foundation
 
 
-// TODO: - Add link to gist
+/// https://gist.github.com/gotev/76df9006674762859626846cf171ff80
 extension UIColor {
     
     var redValue: CGFloat{
