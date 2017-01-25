@@ -53,6 +53,8 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         }
     }
     
+    open var isSelectedColorTappable: Bool = true
+    
     fileprivate var indexOfSelectedColor: Int?
     
     // MARK: - View management
@@ -101,12 +103,20 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     }
     
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let colorCell = collectionView.cellForItem(at: indexPath) as! ColorPickerCell
         
-        // Check if user taps on the already selected color
-//        guard indexPath.item != indexOfSelectedColor else { return }
+        if indexPath.item == indexOfSelectedColor, !isSelectedColorTappable { return }
+        
+        if indexPath.item == indexOfSelectedColor {
+            if isSelectedColorTappable {
+                indexOfSelectedColor = nil
+                colorCell.checkbox.setCheckState(.unchecked, animated: true)
+            }
+            return
+        }
+
         indexOfSelectedColor = indexPath.item
         
-        let colorCell = collectionView.cellForItem(at: indexPath) as! ColorPickerCell
         if colors[indexPath.item].isWhiteText {
             colorCell.checkbox.tintColor = .white
         } else {
