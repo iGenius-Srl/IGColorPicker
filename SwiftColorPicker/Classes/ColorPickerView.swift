@@ -34,6 +34,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         collectionView.register(ColorPickerCell.self, forCellWithReuseIdentifier: ColorPickerCell.cellIdentifier)
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
+        collectionView.allowsMultipleSelection = false
         collectionView.backgroundColor = .white
         return collectionView
     }()

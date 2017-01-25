@@ -40,7 +40,7 @@ class ColorPickerCell: UICollectionViewCell {
         checkbox.isUserInteractionEnabled = false
         checkbox.backgroundColor = .clear
         checkbox.boxLineWidth = 0
-        checkbox.setCheckState(.checked, animated: false)
+        checkbox.setCheckState(.unchecked, animated: false)
         
         self.addSubview(checkbox)
         
