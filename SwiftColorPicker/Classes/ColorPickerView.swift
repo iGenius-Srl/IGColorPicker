@@ -42,6 +42,21 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     open var layoutDelegate: ColorPickerViewDelegateFlowLayout?
     open var delegate: ColorPickerViewDelegate?
     
+    open var preselectedIndex: Int? {
+        didSet {
+            guard let index = preselectedIndex else { return }
+            guard index > 0, colors.indices.contains(index) else {
+                print("ERROR ColorPickerView - preselectedItem out of colors range")
+                return
+            }
+            indexOfSelectedColor = preselectedIndex
+        }
+    }
+    
+    fileprivate var indexOfSelectedColor: Int?
+    
+    // MARK: - View management
+    
     open override func layoutSubviews() {
         self.addSubview(collectionView)
         collectionView.translatesAutoresizingMaskIntoConstraints = false
@@ -69,8 +84,50 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     
     // MARK: - UICollectionViewDelegate
     
+    public func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        let colorPickerCell = cell as! ColorPickerCell
+        guard indexPath.item == indexOfSelectedColor else {
+            colorPickerCell.checkbox.setCheckState(.unchecked, animated: false)
+            return
+        }
+        
+        if colors[indexPath.item].isWhiteText {
+            colorPickerCell.checkbox.tintColor = .white
+        } else {
+            colorPickerCell.checkbox.tintColor = .black
+        }
+        colorPickerCell.checkbox.setCheckState(.checked, animated: false)
+        
+    }
+    
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        // Check if user taps on the already selected color
+//        guard indexPath.item != indexOfSelectedColor else { return }
+        indexOfSelectedColor = indexPath.item
+        
+        let colorCell = collectionView.cellForItem(at: indexPath) as! ColorPickerCell
+        if colors[indexPath.item].isWhiteText {
+            colorCell.checkbox.tintColor = .white
+        } else {
+            colorCell.checkbox.tintColor = .black
+        }
+//        colorCell.checkbox.switchCheckState(animated: true)
+        
+        colorCell.checkbox.checkState = (colorCell.checkbox.checkState == .checked) ? .unchecked : .checked
+        
         delegate?.colorPickerView(self, didSelectItemAt: indexPath)
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
+        
+        // Check if the old color cell is showed. If true, it deselects it
+        guard let oldColorCell = collectionView.cellForItem(at: indexPath) as? ColorPickerCell else {
+            return
+        }
+        oldColorCell.checkbox.setCheckState(.unchecked, animated: true)
+        
+        delegate?.colorPickerView?(self, didDeselectItemAt: indexPath)
     }
     
     // MARK: - UICollectionViewDelegateFlowLayout
@@ -95,4 +152,5 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         }
         return 0
     }
+    
 }
