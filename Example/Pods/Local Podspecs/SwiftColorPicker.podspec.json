@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "summary": "A short description of SwiftColorPicker.",
   "description": "TODO: Add long description of the pod here.",
-  "homepage": "https://github.com/<GITHUB_USERNAME>/SwiftColorPicker",
+  "homepage": "https://github.com/iGenius-Srl/SwiftColorPicker",
   "license": {
     "type": "MIT",
     "file": "LICENSE"
@@ -12,11 +12,16 @@
     "Andrea Antonioni": "andreaantonioni97@gmail.com"
   },
   "source": {
-    "git": "https://github.com/<GITHUB_USERNAME>/SwiftColorPicker.git",
+    "git": "https://github.com/iGenius-Srl/SwiftColorPicker.git",
     "tag": "0.1.0"
   },
   "platforms": {
     "ios": "8.0"
   },
-  "source_files": "SwiftColorPicker/Classes/**/*"
+  "source_files": "SwiftColorPicker/Classes/**/*",
+  "dependencies": {
+    "M13Checkbox": [
+      "~> 2.2.0"
+    ]
+  }
 }

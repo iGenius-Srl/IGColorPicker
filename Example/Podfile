@@ -2,6 +2,7 @@ use_frameworks!
 
 target 'SwiftColorPicker_Example' do
   pod 'SwiftColorPicker', :path => '../'
+  pod 'M13Checkbox', '~> 2.2.0'
 
   target 'SwiftColorPicker_Tests' do
     inherit! :search_paths
