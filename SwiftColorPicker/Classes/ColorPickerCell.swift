@@ -44,7 +44,7 @@ class ColorPickerCell: UICollectionViewCell {
         
         self.addSubview(checkbox)
         
-        // checkbox constraints
+        // Checkbox constraints
         checkbox.translatesAutoresizingMaskIntoConstraints = false
         self.addConstraint(NSLayoutConstraint(item: checkbox, attribute: .top, relatedBy: .equal, toItem: self, attribute: .top, multiplier: 1.0, constant: 14))
         self.addConstraint(NSLayoutConstraint(item: checkbox, attribute: .leading, relatedBy: .equal, toItem: self, attribute: .leading, multiplier: 1.0, constant: 14))

@@ -11,6 +11,7 @@
 		0904C2C5B969FEDEF3595E577B3EFF18 /* Pods-SwiftColorPicker_Tests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4F0E38FD7CA78526B5AC62212FB24D18 /* Pods-SwiftColorPicker_Tests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		09BC583BCE63BDEBD615414F0CFC4F8A /* SwiftColorPicker-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0C3524160DB75BF62F3EFEBC03BE6323 /* SwiftColorPicker-dummy.m */; };
 		13D1CC1039D080AFCC9F5D74D2398E6C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE60148D6E3E6B8B39466311109C351 /* Foundation.framework */; };
+		1757F2B91E3895CA005A0792 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1757F2B81E3895CA005A0792 /* UIColor+Extension.swift */; };
 		1D1AC393A901D0966CCD763F26E33555 /* ColorPickerViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D6BEF223A56D1D02133CB455258FD4D /* ColorPickerViewDelegate.swift */; };
 		1EF90234ACA2378140B85E55F0111A4E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DE60148D6E3E6B8B39466311109C351 /* Foundation.framework */; };
 		4192801F6A3D5F2537EFB1855082D8DE /* M13CheckboxDotPathPresets.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCA062E5276B97750592DEB745C9108F /* M13CheckboxDotPathPresets.swift */; };
@@ -69,11 +70,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		06F9FB73BCE44756AE114A96107A2E50 /* SwiftColorPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = SwiftColorPicker.modulemap; sourceTree = "<group>"; };
+		06F9FB73BCE44756AE114A96107A2E50 /* SwiftColorPicker.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwiftColorPicker.modulemap; sourceTree = "<group>"; };
 		0C3524160DB75BF62F3EFEBC03BE6323 /* SwiftColorPicker-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftColorPicker-dummy.m"; sourceTree = "<group>"; };
 		0D6BEF223A56D1D02133CB455258FD4D /* ColorPickerViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorPickerViewDelegate.swift; sourceTree = "<group>"; };
 		153FE99C9DDBED9E2A852C2A0BB7EB17 /* Pods-SwiftColorPicker_Example-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftColorPicker_Example-acknowledgements.plist"; sourceTree = "<group>"; };
-		17D2FC57573E11487E5E19BD3084448D /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
+		1757F2B81E3895CA005A0792 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
+		17D2FC57573E11487E5E19BD3084448D /* M13Checkbox.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = M13Checkbox.modulemap; sourceTree = "<group>"; };
 		272A9028B0ED9D7CA339DA761B77C286 /* M13Checkbox.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = M13Checkbox.xcconfig; sourceTree = "<group>"; };
 		3277EF8EA0E326A9F0FA2D664DB47B03 /* M13Checkbox-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "M13Checkbox-umbrella.h"; sourceTree = "<group>"; };
 		3373EA97B9160199C516314A2410DE2F /* M13CheckboxExpandManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxExpandManager.swift; path = Sources/Managers/M13CheckboxExpandManager.swift; sourceTree = "<group>"; };
@@ -88,26 +90,26 @@
 		64B2F1693A04F0FA8DCFB10F285BAA47 /* ColorPickerView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorPickerView.swift; sourceTree = "<group>"; };
 		68C814807D18BF6D684CE9E4CCE8505A /* M13CheckboxPathPresets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxPathPresets.swift; path = Sources/M13CheckboxPathPresets.swift; sourceTree = "<group>"; };
 		6B7DC25C1502203D0B7B74946C0A5476 /* Pods-SwiftColorPicker_Tests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftColorPicker_Tests-acknowledgements.markdown"; sourceTree = "<group>"; };
-		708F8ACBD15A65E8CA00A7C1BF4D6932 /* Pods-SwiftColorPicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SwiftColorPicker_Example.modulemap"; sourceTree = "<group>"; };
+		708F8ACBD15A65E8CA00A7C1BF4D6932 /* Pods-SwiftColorPicker_Example.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SwiftColorPicker_Example.modulemap"; sourceTree = "<group>"; };
 		768863AF9783FBE5EAFD374E64DA5B1B /* M13Checkbox.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13Checkbox.swift; path = Sources/M13Checkbox.swift; sourceTree = "<group>"; };
-		7AA735358146E30A6FA7F73D28FA985F /* SwiftColorPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = SwiftColorPicker.framework; path = SwiftColorPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7AA735358146E30A6FA7F73D28FA985F /* SwiftColorPicker.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwiftColorPicker.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DE60148D6E3E6B8B39466311109C351 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7EBB6554A59650901FB91EC12EDE56CB /* Pods-SwiftColorPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftColorPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
 		843A3CC8CD424B12CE1FAE7CC21219E6 /* M13CheckboxSpiralPathPresets.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxSpiralPathPresets.swift; path = Sources/Presets/M13CheckboxSpiralPathPresets.swift; sourceTree = "<group>"; };
 		84706A6D0E7D5BEF9A6A28E21290C18E /* M13CheckboxFillManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFillManager.swift; path = Sources/Managers/M13CheckboxFillManager.swift; sourceTree = "<group>"; };
 		89E1BC804CEFED115229D0EC1A923188 /* M13CheckboxManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxManager.swift; path = Sources/M13CheckboxManager.swift; sourceTree = "<group>"; };
 		92E11B0867B743DF11C64061665254A8 /* Pods-SwiftColorPicker_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftColorPicker_Tests-dummy.m"; sourceTree = "<group>"; };
-		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		962204EBDFCA02C7D3EFDD89399B5CC8 /* Pods_SwiftColorPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftColorPicker_Tests.framework; path = "Pods-SwiftColorPicker_Tests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		962204EBDFCA02C7D3EFDD89399B5CC8 /* Pods_SwiftColorPicker_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftColorPicker_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9EEAB01EA712D57B1097323C7A4A9C3B /* ColorPickerViewDelegateFlowLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ColorPickerViewDelegateFlowLayout.swift; sourceTree = "<group>"; };
-		A0B23BCE532531B74CB2F95748115304 /* Pods-SwiftColorPicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; path = "Pods-SwiftColorPicker_Tests.modulemap"; sourceTree = "<group>"; };
+		A0B23BCE532531B74CB2F95748115304 /* Pods-SwiftColorPicker_Tests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-SwiftColorPicker_Tests.modulemap"; sourceTree = "<group>"; };
 		A3CDE7E3A8656680EBE6376D56B980CD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A8331364EA28D014644E6D0C98F48218 /* M13Checkbox+IB.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "M13Checkbox+IB.swift"; path = "Sources/M13Checkbox+IB.swift"; sourceTree = "<group>"; };
 		AB083E34284292BBDAAA12471B7471D3 /* SwiftColorPicker.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftColorPicker.xcconfig; sourceTree = "<group>"; };
 		AC0F2CC455F0BAB8A2D492EFCCBA4B12 /* M13CheckboxStrokeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxStrokeManager.swift; path = Sources/Managers/M13CheckboxStrokeManager.swift; sourceTree = "<group>"; };
 		AC7F29BE03E05C056892EB24E35D9C3E /* M13CheckboxDotManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxDotManager.swift; path = Sources/Managers/M13CheckboxDotManager.swift; sourceTree = "<group>"; };
 		B0C5B5A415D158204EC5607EFC4D7981 /* M13CheckboxSpiralManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxSpiralManager.swift; path = Sources/Managers/M13CheckboxSpiralManager.swift; sourceTree = "<group>"; };
-		B4AF87D56B36EF099A3264983F5DAD9B /* M13Checkbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = M13Checkbox.framework; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4AF87D56B36EF099A3264983F5DAD9B /* M13Checkbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5321D976D67A4AD69D1B9735C82ED8A /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B9E33B003B983F4784598B5D9CB44CB5 /* M13Checkbox.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = M13Checkbox.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BC266174896BF37FFDAB067BBD0874C5 /* Pods-SwiftColorPicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftColorPicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -119,7 +121,7 @@
 		D2CDD38258E07B2F5D36DF00DFF6583D /* Pods-SwiftColorPicker_Tests-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftColorPicker_Tests-frameworks.sh"; sourceTree = "<group>"; };
 		DA79D27069F17DFA91736C94569F1340 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		DF84600FC8A0CF82B551CBDB0C15D7A2 /* M13Checkbox-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "M13Checkbox-dummy.m"; sourceTree = "<group>"; };
-		E09551E7FD0583CDC64B3065E772C9A0 /* Pods_SwiftColorPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_SwiftColorPicker_Example.framework; path = "Pods-SwiftColorPicker_Example.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E09551E7FD0583CDC64B3065E772C9A0 /* Pods_SwiftColorPicker_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SwiftColorPicker_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E2A607AE08F424BACC04DC9D067F9CEB /* M13CheckboxFlatManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFlatManager.swift; path = Sources/Managers/M13CheckboxFlatManager.swift; sourceTree = "<group>"; };
 		ED8871F3FEE0248C9A6D5DCA2F44724A /* Pods-SwiftColorPicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftColorPicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		F15717D8859C08311606713FD09A77E2 /* M13CheckboxFadeManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = M13CheckboxFadeManager.swift; path = Sources/Managers/M13CheckboxFadeManager.swift; sourceTree = "<group>"; };
@@ -192,8 +194,8 @@
 				64B2F1693A04F0FA8DCFB10F285BAA47 /* ColorPickerView.swift */,
 				0D6BEF223A56D1D02133CB455258FD4D /* ColorPickerViewDelegate.swift */,
 				9EEAB01EA712D57B1097323C7A4A9C3B /* ColorPickerViewDelegateFlowLayout.swift */,
+				1757F2B81E3895CA005A0792 /* UIColor+Extension.swift */,
 			);
-			name = Classes;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -202,7 +204,6 @@
 			children = (
 				28BBB6CA86D179BE47DBCDAD918BB597 /* Classes */,
 			);
-			name = SwiftColorPicker;
 			path = SwiftColorPicker;
 			sourceTree = "<group>";
 		};
@@ -327,7 +328,6 @@
 				AC0F2CC455F0BAB8A2D492EFCCBA4B12 /* M13CheckboxStrokeManager.swift */,
 				1AE883244BAAD4C8BB878370325792A7 /* Support Files */,
 			);
-			name = M13Checkbox;
 			path = M13Checkbox;
 			sourceTree = "<group>";
 		};
@@ -504,6 +504,7 @@
 				A6A2A823860C5B1B976180AD201ECBC6 /* ColorPickerCell.swift in Sources */,
 				A74014D9EF0E4936095914BA8A7EA2A5 /* ColorPickerView.swift in Sources */,
 				1D1AC393A901D0966CCD763F26E33555 /* ColorPickerViewDelegate.swift in Sources */,
+				1757F2B91E3895CA005A0792 /* UIColor+Extension.swift in Sources */,
 				5B58D390A839AE392DAC13B142EBC51C /* ColorPickerViewDelegateFlowLayout.swift in Sources */,
 				09BC583BCE63BDEBD615414F0CFC4F8A /* SwiftColorPicker-dummy.m in Sources */,
 			);
