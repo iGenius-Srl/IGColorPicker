@@ -113,8 +113,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
             colorCell.checkbox.tintColor = .black
         }
 //        colorCell.checkbox.switchCheckState(animated: true)
-        
-        colorCell.checkbox.checkState = (colorCell.checkbox.checkState == .checked) ? .unchecked : .checked
+        colorCell.checkbox.setCheckState((colorCell.checkbox.checkState == .checked) ? .unchecked : .checked, animated: true)
         
         delegate?.colorPickerView(self, didSelectItemAt: indexPath)
     }
