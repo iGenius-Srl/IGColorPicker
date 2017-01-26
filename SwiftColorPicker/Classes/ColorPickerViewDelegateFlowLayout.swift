@@ -19,4 +19,7 @@ import Foundation
     
     @objc @available(iOS 6.0, *)
     optional func colorPickerView(_ colorPickerView: ColorPickerView, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+    
+    @objc @available(iOS 6.0, *)
+    optional func colorPickerView(_ colorPickerView: ColorPickerView, insetForSectionAt section: Int) -> UIEdgeInsets
 }

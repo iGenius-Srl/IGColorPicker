@@ -66,7 +66,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     fileprivate lazy var collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
-        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+//        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         layout.scrollDirection = .horizontal
         
         let collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
@@ -187,6 +187,13 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
             return minimumInteritemSpacingForSectionAt
         }
         return 0
+    }
+    
+    public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        if let layoutDelegate = layoutDelegate, let insetForSectionAt = layoutDelegate.colorPickerView?(self, insetForSectionAt: section) {
+            return insetForSectionAt
+        }
+        return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     }
     
 }
