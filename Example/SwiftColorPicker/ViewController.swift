@@ -21,6 +21,7 @@ class ViewController: UIViewController, ColorPickerViewDelegateFlowLayout {
         // Stup color picker
         colorPickerView.layoutDelegate = self
         colorPickerView.preselectedIndex = 13
+        colorPickerView.style = .square
     }
     
     override func didReceiveMemoryWarning() {

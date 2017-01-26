@@ -10,6 +10,11 @@
 
 import UIKit
 
+public enum ColorPickerViewStyle {
+    case square
+    case circle
+}
+
 open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Open properties
@@ -53,6 +58,8 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     /// If true, the selected color can be deselected by a tap
     open var isSelectedColorTappable: Bool = true
     
+    open var style: ColorPickerViewStyle = .circle
+    
     // MARK: - Private properties
     fileprivate var indexOfSelectedColor: Int?
     fileprivate lazy var collectionView: UICollectionView = {
@@ -95,6 +102,10 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: ColorPickerCell.cellIdentifier, for: indexPath) as! ColorPickerCell
         
         cell.backgroundColor = colors[indexPath.item]
+        
+        if style == .circle {
+            cell.layer.cornerRadius = cell.bounds.width / 2
+        }
         
         return cell
     }

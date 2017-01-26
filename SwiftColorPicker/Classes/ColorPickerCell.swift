@@ -39,7 +39,6 @@ class ColorPickerCell: UICollectionViewCell {
     // MARK: - Private methods
     
     fileprivate func commonInit() {
-        self.layer.cornerRadius = self.bounds.width / 2
         
         // Setup of checkbox
         checkbox.isUserInteractionEnabled = false
