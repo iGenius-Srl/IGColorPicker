@@ -17,13 +17,19 @@ class ViewController: UIViewController, ColorPickerViewDelegateFlowLayout {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        // Stup color picker
         colorPickerView.layoutDelegate = self
+        colorPickerView.preselectedIndex = 13
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    
+    // MARK: - ColorPickerViewDelegateFlowLayoutw
     
     func colorPickerView(_ colorPickerView: ColorPickerView, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 100)

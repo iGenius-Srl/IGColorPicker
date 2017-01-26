@@ -45,6 +45,9 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
                 return
             }
             indexOfSelectedColor = preselectedIndex
+            
+            collectionView.selectItem(at: IndexPath(item: indexOfSelectedColor!, section: 0), animated: false, scrollPosition: .centeredHorizontally)
+//            collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: false)
         }
     }
     /// If true, the selected color can be deselected by a tap
