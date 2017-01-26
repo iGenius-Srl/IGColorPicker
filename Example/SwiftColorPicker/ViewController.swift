@@ -22,6 +22,7 @@ class ViewController: UIViewController, ColorPickerViewDelegateFlowLayout {
         colorPickerView.layoutDelegate = self
         colorPickerView.preselectedIndex = 13
         colorPickerView.style = .square
+        colorPickerView.selectionStyle = .none
     }
     
     override func didReceiveMemoryWarning() {

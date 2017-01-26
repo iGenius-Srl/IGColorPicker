@@ -15,6 +15,11 @@ public enum ColorPickerViewStyle {
     case circle
 }
 
+public enum ColorPickerViewSelectStyle {
+    case check
+    case none
+}
+
 open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     // MARK: - Open properties
@@ -60,13 +65,14 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     open var scrollToPreselectedIndex: Bool = false
     /// Style of the color picker cells
     open var style: ColorPickerViewStyle = .circle
+    /// Style applied when a color is selected
+    open var selectionStyle: ColorPickerViewSelectStyle = .check
     
     // MARK: - Private properties
     fileprivate var indexOfSelectedColor: Int?
     fileprivate lazy var collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
-//        layout.sectionInset = UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
         layout.scrollDirection = .horizontal
         
         let collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
@@ -122,6 +128,8 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         
         let colorPickerCell = cell as! ColorPickerCell
         
+        guard selectionStyle == .check else { return }
+        
         guard indexPath.item == indexOfSelectedColor else {
             colorPickerCell.checkbox.setCheckState(.unchecked, animated: false)
             return
@@ -138,6 +146,8 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         if indexPath.item == indexOfSelectedColor, !isSelectedColorTappable {
             return
         }
+        
+        guard selectionStyle == .check else { return }
         
         if indexPath.item == indexOfSelectedColor {
             if isSelectedColorTappable {
@@ -161,6 +171,9 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         guard let oldColorCell = collectionView.cellForItem(at: indexPath) as? ColorPickerCell else {
             return
         }
+        
+        guard selectionStyle == .check else { return }
+        
         oldColorCell.checkbox.setCheckState(.unchecked, animated: true)
         
         delegate?.colorPickerView?(self, didDeselectItemAt: indexPath)
