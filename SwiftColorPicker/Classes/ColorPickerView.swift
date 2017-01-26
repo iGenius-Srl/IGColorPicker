@@ -56,9 +56,9 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     }
     /// If true, the selected color can be deselected by a tap
     open var isSelectedColorTappable: Bool = true
-    
+    /// If true, the preselectedIndex is showed in the center of the color picker
     open var scrollToPreselectedIndex: Bool = false
-    
+    /// Style of the color picker cells
     open var style: ColorPickerViewStyle = .circle
     
     // MARK: - Private properties
