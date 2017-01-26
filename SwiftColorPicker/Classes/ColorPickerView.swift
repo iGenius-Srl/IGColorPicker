@@ -52,11 +52,12 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
             indexOfSelectedColor = preselectedIndex
             
             collectionView.selectItem(at: IndexPath(item: indexOfSelectedColor!, section: 0), animated: false, scrollPosition: .centeredHorizontally)
-//            collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .centeredHorizontally, animated: false)
         }
     }
     /// If true, the selected color can be deselected by a tap
     open var isSelectedColorTappable: Bool = true
+    
+    open var scrollToPreselectedIndex: Bool = false
     
     open var style: ColorPickerViewStyle = .circle
     
@@ -90,6 +91,11 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         self.addConstraint(NSLayoutConstraint(item: collectionView, attribute: .bottom, relatedBy: .equal, toItem: self, attribute: .bottom, multiplier: 1.0, constant: 0))
         self.addConstraint(NSLayoutConstraint(item: collectionView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0))
         
+        // Check on scrollToPreselectedIndex
+        if let preselectedIndex = preselectedIndex, !scrollToPreselectedIndex {
+            // Scroll to the first color
+            collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
+        }
     }
     
     // MARK: - UICollectionViewDataSource
