@@ -82,7 +82,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         collectionView.showsVerticalScrollIndicator = false
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.allowsMultipleSelection = false
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .clear
         return collectionView
     }()
     

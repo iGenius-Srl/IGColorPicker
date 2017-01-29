@@ -11,18 +11,22 @@
 import UIKit
 import SwiftColorPicker
 
-class ViewController: UIViewController, ColorPickerViewDelegateFlowLayout {
+class ViewController: UIViewController, ColorPickerViewDelegate, ColorPickerViewDelegateFlowLayout {
 
     @IBOutlet weak var colorPickerView: ColorPickerView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // Stup color picker
+        self.view.backgroundColor = .white
+        
+        // Setup color picker
+        colorPickerView.delegate = self
         colorPickerView.layoutDelegate = self
-        colorPickerView.preselectedIndex = 13
+        colorPickerView.isSelectedColorTappable = false
         colorPickerView.style = .square
-        colorPickerView.selectionStyle = .none
+        colorPickerView.selectionStyle = .check
+        colorPickerView.backgroundColor = .clear
     }
     
     override func didReceiveMemoryWarning() {
@@ -30,11 +34,29 @@ class ViewController: UIViewController, ColorPickerViewDelegateFlowLayout {
         // Dispose of any resources that can be recreated.
     }
     
+    // MARK: - ColorPickerViewDelegate
     
-    // MARK: - ColorPickerViewDelegateFlowLayoutw
+    func colorPickerView(_ colorPickerView: ColorPickerView, didSelectItemAt indexPath: IndexPath) {
+        self.view.backgroundColor = colorPickerView.colors[indexPath.item]
+    }
+    
+    
+    // MARK: - ColorPickerViewDelegateFlowLayout
     
     func colorPickerView(_ colorPickerView: ColorPickerView, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: 100, height: 100)
+    }
+    
+    func colorPickerView(_ colorPickerView: ColorPickerView, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func colorPickerView(_ colorPickerView: ColorPickerView, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func colorPickerView(_ colorPickerView: ColorPickerView, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
     }
 
 }
