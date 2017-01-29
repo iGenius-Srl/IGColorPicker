@@ -11,7 +11,7 @@
 import UIKit
 import SwiftColorPicker
 
-class ViewController: UIViewController, ColorPickerViewDelegate, ColorPickerViewDelegateFlowLayout {
+class SquareColorPickerViewController: UIViewController, ColorPickerViewDelegate, ColorPickerViewDelegateFlowLayout {
 
     @IBOutlet weak var colorPickerView: ColorPickerView!
     
