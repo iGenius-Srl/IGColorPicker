@@ -5,27 +5,36 @@
 [![License](https://img.shields.io/cocoapods/l/SwiftColorPicker.svg?style=flat)](http://cocoapods.org/pods/SwiftColorPicker)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftColorPicker.svg?style=flat)](http://cocoapods.org/pods/SwiftColorPicker)
 
-## Example
 
-To run the example project, clone the repo, and run `pod install` from the Example directory first.
+SwiftColorPicker is a fantastic color picker 🎨 written in Swift. Developers can use our color picker just like we do in [crystal.io](https://crystal.io) or they can customize it with all the available features .
 
 ## Requirements
- * Swift 3
- * Xcode 8+
- * iOS 8+
+ * Swift 3.0
+ * Xcode 8.0+
+ * iOS 8.0+
 
 ## Installation
 
 SwiftColorPicker is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your Podfile:
+it, simply add the following line to your ```Podfile```:
 
 ```ruby
-pod "SwiftColorPicker"
+pod 'SwiftColorPicker'
 ```
+## Example
+
+To run the example project, clone the repo, and run `pod install` from the Example directory first.
+
+## Getting Started
+### ColorPickerView
+
 
 ## Author
 
-* Andrea Antonioni, antonioni@igenius.net
+* Andrea Antonioni ([@andrea_anto97](https://twitter.com/andrea_anto97)), antonioni@igenius.net 
+
+## Contributing
+Feel free to collaborate with ideas 💭 , issues ⁉️ and/or pull requests 🔃.
 
 ## License
 
