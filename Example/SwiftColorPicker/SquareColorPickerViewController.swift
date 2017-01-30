@@ -19,6 +19,7 @@ class SquareColorPickerViewController: UIViewController, ColorPickerViewDelegate
         super.viewDidLoad()
         
         self.view.backgroundColor = .white
+        self.title = "Select a color 🎨"
         
         // Setup color picker
         colorPickerView.delegate = self
