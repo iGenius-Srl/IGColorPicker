@@ -148,20 +148,22 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
             return
         }
         
-        guard selectionStyle == .check else { return }
-        
-        if indexPath.item == indexOfSelectedColor {
-            if isSelectedColorTappable {
-                indexOfSelectedColor = nil
-                colorPickerCell.checkbox.setCheckState(.unchecked, animated: true)
+        if selectionStyle == .check {
+            
+            if indexPath.item == indexOfSelectedColor {
+                if isSelectedColorTappable {
+                    indexOfSelectedColor = nil
+                    colorPickerCell.checkbox.setCheckState(.unchecked, animated: true)
+                }
+                return
             }
-            return
+            
+            indexOfSelectedColor = indexPath.item
+            
+            colorPickerCell.checkbox.tintColor = colors[indexPath.item].isWhiteText ? .white : .black
+            colorPickerCell.checkbox.setCheckState((colorPickerCell.checkbox.checkState == .checked) ? .unchecked : .checked, animated: true)
+            
         }
-
-        indexOfSelectedColor = indexPath.item
-        
-        colorPickerCell.checkbox.tintColor = colors[indexPath.item].isWhiteText ? .white : .black
-        colorPickerCell.checkbox.setCheckState((colorPickerCell.checkbox.checkState == .checked) ? .unchecked : .checked, animated: true)
         
         delegate?.colorPickerView(self, didSelectItemAt: indexPath)
     }
@@ -173,9 +175,11 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
             return
         }
         
-        guard selectionStyle == .check else { return }
-        
-        oldColorCell.checkbox.setCheckState(.unchecked, animated: true)
+        if selectionStyle == .check {
+            
+            oldColorCell.checkbox.setCheckState(.unchecked, animated: true)
+            
+        }
         
         delegate?.colorPickerView?(self, didDeselectItemAt: indexPath)
     }
