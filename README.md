@@ -60,7 +60,7 @@ Every developer can customize the color picker layout in the way to make shine w
 colorPickerView.layoutDelegate = self
 
 // MARK: - ColorPickerViewDelegateFlowLayout
-@objc public ColorPickerViewDelegateFlowLayout {
+@objc public protocol ColorPickerViewDelegateFlowLayout {
     
     @objc optional func colorPickerView(_ colorPickerView: ColorPickerView, sizeForItemAt indexPath: IndexPath) -> CGSize
     
