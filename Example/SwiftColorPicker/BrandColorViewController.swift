@@ -19,6 +19,8 @@ class BrandColorViewController: UIViewController, ColorPickerViewDelegate, Color
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.title = "Brand color"
+        
         // Setup selectedColorView
         selectedColorView.layer.cornerRadius = selectedColorView.frame.width/2
         
