@@ -27,6 +27,10 @@ class BrandColorViewController: UIViewController, ColorPickerViewDelegate, Color
         colorPickerView.layoutDelegate = self
         colorPickerView.style = .circle
         colorPickerView.selectionStyle = .check
+        colorPickerView.isSelectedColorTappable = false
+        colorPickerView.preselectedIndex = colorPickerView.colors.indices.first
+        
+        selectedColorView.backgroundColor = colorPickerView.colors.first
 
     }
 
