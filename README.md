@@ -25,7 +25,7 @@ pod "SwiftColorPicker"
 
 ## Author
 
-Andrea Antonioni, andreaantonioni97@gmail.com
+* Andrea Antonioni, antonioni@igenius.net
 
 ## License
 
