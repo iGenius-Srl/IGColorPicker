@@ -5,7 +5,6 @@
 [![License](https://img.shields.io/cocoapods/l/SwiftColorPicker.svg?style=flat)](http://cocoapods.org/pods/SwiftColorPicker)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftColorPicker.svg?style=flat)](http://cocoapods.org/pods/SwiftColorPicker)
 
-
 SwiftColorPicker is a fantastic color picker 🎨 written in Swift. Developers can use our color picker just like we do in [crystal.io](https://crystal.io) or they can customize it with all the available features .
 
 ## Requirements
@@ -28,6 +27,51 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Getting Started
 ### ColorPickerView
 
+### Delegate
+```ColorPickerViewDelegate``` is the delegate protocol that recognize the tap gesture on a color. This is an option delegate, but if you need to know when the user select a color you should implement it.
+
+```swift
+
+// Set the delegate 🙋🏻‍♂️
+colorPickerView.delegate = self
+
+// MARK: - ColorPickerViewDelegate
+extension ViewController: ColorPickerViewDelegate {
+
+    func colorPickerView(_ colorPickerView: ColorPickerView, didSelectItemAt indexPath: IndexPath) {
+        // A color has been selected
+    }
+    
+    // This is an optional method
+    func colorPickerView(_ colorPickerView: ColorPickerView, didDeselectItemAt indexPath: IndexPath) {
+        // A color has been deselected
+    }
+
+}
+
+```
+
+### Layout delegate
+
+Every developer can customize the color picker layout in the way to make shine with their design. To do that you have to implement our layout delegate ```ColorPickerViewDelegateFlowLayout```
+
+```swift
+// Set the delegate 🙋🏻‍♂️
+colorPickerView.layoutDelegate = self
+
+// MARK: - ColorPickerViewDelegateFlowLayout
+@objc public ColorPickerViewDelegateFlowLayout {
+    
+    @objc optional func colorPickerView(_ colorPickerView: ColorPickerView, sizeForItemAt indexPath: IndexPath) -> CGSize
+    
+    @objc optional func colorPickerView(_ colorPickerView: ColorPickerView, minimumLineSpacingForSectionAt section: Int) -> CGFloat
+    
+    @objc optional func colorPickerView(_ colorPickerView: ColorPickerView, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
+    
+    @objc optional func colorPickerView(_ colorPickerView: ColorPickerView, insetForSectionAt section: Int) -> UIEdgeInsets
+}
+
+```
 
 ## Author
 
@@ -36,6 +80,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Contributing
 Feel free to collaborate with ideas 💭 , issues ⁉️ and/or pull requests 🔃.
 
+**P.S.** If you use SwiftColorPicker in your app we would love to hear about it! 😉
 ## License
 
 > Copyright (c) 2017 iGenius Srl
