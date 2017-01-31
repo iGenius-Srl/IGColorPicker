@@ -20,12 +20,27 @@ it, simply add the following line to your ```Podfile```:
 ```ruby
 pod 'SwiftColorPicker'
 ```
-## Example
+### Example
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
 ## Getting Started
 ### ColorPickerView
+
+```ColorPickerView``` is just a class that inheritance from ```UIView```, so you can both use Interface Builder or you can create the color picker programmatically:
+
+#### Interface Builder
+* Add a ```UIView``` in a view controller. Go to the **Identity inspector** and in set ```SwiftColorPicker``` as class.
+* Just drag and drop the view in the correct class  🤙🏻
+
+#### Code
+```swift
+import SwiftColorPicker
+
+let colorPickerView = ColorPickerView() //that's it 🎉
+
+```
+
 
 ### Delegate
 ```ColorPickerViewDelegate``` is the delegate protocol that recognizes the tap gesture on a color. This is an option delegate, but if you need to know when the user selects a color you should implement it.
