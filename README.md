@@ -37,10 +37,18 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ```swift
 import SwiftColorPicker
 
-let colorPickerView = ColorPickerView() //that's it 🎉
+class ViewController {
+    var colorPickerView: ColorPickerView!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        colorPickerView = ColorPickerView()
+    }
+
+}
 
 ```
-
 
 ### Delegate
 ```ColorPickerViewDelegate``` is the delegate protocol that recognizes the tap gesture on a color. This is an option delegate, but if you need to know when the user selects a color you should implement it.
