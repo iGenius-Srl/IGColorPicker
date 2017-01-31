@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   s.name             = 'SwiftColorPicker'
   s.version          = '0.1.0'
-  s.summary          = 'A customizeable color picker for iOS in Swift'
+  s.summary          = 'A customizable color picker for iOS in Swift'
 
   s.description      = <<-DESC
                         SwiftColorPicker is a fantastic color picker written in Swift. Developers can use our color picker just like we do in crystal.io or thay can customize it with all the available features.
