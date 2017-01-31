@@ -28,7 +28,7 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ### ColorPickerView
 
 ### Delegate
-```ColorPickerViewDelegate``` is the delegate protocol that recognize the tap gesture on a color. This is an option delegate, but if you need to know when the user select a color you should implement it.
+```ColorPickerViewDelegate``` is the delegate protocol that recognizes the tap gesture on a color. This is an option delegate, but if you need to know when the user selects a color you should implement it.
 
 ```swift
 
@@ -53,7 +53,7 @@ extension ViewController: ColorPickerViewDelegate {
 
 ### Layout delegate
 
-Every developer can customize the color picker layout in the way to make shine with their design. To do that you have to implement our layout delegate ```ColorPickerViewDelegateFlowLayout```
+Every developer can customize the color picker layout in the way to fit with their design. To do that you have to implement our layout delegate ```ColorPickerViewDelegateFlowLayout```
 
 ```swift
 // Set the delegate 🙋🏻‍♂️
