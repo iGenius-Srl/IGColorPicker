@@ -1,7 +1,8 @@
 # SwiftColorPicker
 
-[![CI Status](http://img.shields.io/travis/Andrea Antonioni/SwiftColorPicker.svg?style=flat)](https://travis-ci.org/Andrea Antonioni/SwiftColorPicker)
+
 [![Version](https://img.shields.io/cocoapods/v/SwiftColorPicker.svg?style=flat)](http://cocoapods.org/pods/SwiftColorPicker)
+<img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language: Swift">
 [![License](https://img.shields.io/cocoapods/l/SwiftColorPicker.svg?style=flat)](http://cocoapods.org/pods/SwiftColorPicker)
 [![Platform](https://img.shields.io/cocoapods/p/SwiftColorPicker.svg?style=flat)](http://cocoapods.org/pods/SwiftColorPicker)
 
@@ -59,7 +60,7 @@ But if you don't like them, you are free to use your own colors 🖍:
 ```
 [GIF]
 
-* **isSeelctedColorTappable** ```Bool```: if true, the selected color can be deselected by a tap
+* **isSelectedColorTappable** ```Bool```: if true, the selected color can be deselected by a tap
 
 * **scrollToPreselectedIndex** ```Bool```: if true, the preselectedIndex is showed in the center of the color picker
 
