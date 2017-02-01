@@ -28,7 +28,8 @@ SwiftColorPicker is a fantastic color picker 🎨 written in Swift. Developers c
 ## Documentation
 ### Colors
 The color picker comes with our set of colors:
-[image]
+
+![alt text](/Resources/Palette.png "Color Palette")
 
 But if you don't like them, you are free to use your own colors 🖍:
 ```swift
@@ -40,17 +41,21 @@ But if you don't like them, you are free to use your own colors 🖍:
 ### Style
 * **style** ```enum```: look and feel of color picker cells
     * **circle**
-[image]
+    
+      ![alt text](/Resources/Circle.png "Circle style")
 
     * **square**
-[image]
+    
+      ![alt text](/Resources/Square.png "Square style")
 
 * **selectionStyle** ```enum```: style applied when a color is selected
     * **check**
-[image]
+      
+      ![alt text](/Resources/Check.png "Check selection style")
 
     * **none**
-[image]
+
+      ![alt text](/Resources/None.png "None selection style")
 
 ### Other features
 * **preselectedIndex** ```Int?```: the index of the preselected color in the color picker
