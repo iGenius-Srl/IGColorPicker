@@ -7,15 +7,71 @@
 
 SwiftColorPicker is a fantastic color picker 🎨 written in Swift. Developers can use our color picker just like we do in [crystal.io](https://crystal.io) or they can customize it with all the available features .
 
-## Requirements
- * Swift 3.0
- * Xcode 8.0+
- * iOS 8.0+
+## Table of Contents
+* **Documentation**
+⋅⋅* Colors
+⋅⋅* Style
+⋅⋅* Other features
+* **Installation**
+⋅⋅* Example
+* **Getting Started**
+⋅⋅* ColorPickerView
+⋅⋅* Delegate
+⋅⋅* Layout
+* **Project Details**
+⋅⋅* Requirements
+⋅⋅* Contributing
+⋅⋅* Author
+⋅⋅* Licence
+
+## Documentation
+### Colors
+The color picker comes with our set of colors:
+[image]
+
+But if you don't like them, you are free to use your own colors 🖍:
+```swift
+
+    colorPickerView.colors = [UIColor.red, UIColor.yellow, UIColor.green, UIColor.black]
+
+```
+
+### Style
+* **style** ```enum```: look and feel of color picker cells
+..* **circle**
+[image]
+
+..* **square**
+[image]
+
+* **selectionStyle** ```enum```: style applied when a color is selected
+..* **check**
+[image]
+
+..* **none**
+[image]
+
+### Other features
+* **preselectedIndex** ```Int?```: the index of the preselected color in the color picker
+
+```swift
+    colorPickerView.preselectedIndex = 3
+```
+[GIF]
+
+* **isSeelctedColorTappable** ```Bool```: if true, the selected color can be deselected by a tap
+
+* **scrollToPreselectedIndex** ```Bool```: if true, the preselectedIndex is showed in the center of the color picker
+
+```swift
+    colorPickerView.scrollToPreselectedIndex = true
+```
+[GIF]
 
 ## Installation
 
 SwiftColorPicker is available through [CocoaPods](http://cocoapods.org). To install
-it, simply add the following line to your ```Podfile```:
+it, simply add the following line to your `Podfile`:
 
 ```ruby
 pod 'SwiftColorPicker'
@@ -27,23 +83,34 @@ To run the example project, clone the repo, and run `pod install` from the Examp
 ## Getting Started
 ### ColorPickerView
 
-```ColorPickerView``` is just a class that inheritance from ```UIView```, so you can both use Interface Builder or you can create the color picker programmatically:
+`ColorPickerView` is just a class that inheritance from `UIView`, so you can both use a storyboard or you can create the color picker programmatically:
 
-#### Interface Builder
-* Add a ```UIView``` in a view controller. Go to the **Identity inspector** and in set ```SwiftColorPicker``` as class.
+#### Storyboard
+* Add a `UIView` to the storyboard. Go to the **Identity inspector** and in set its class to `SwiftColorPicker`.
 * Just drag and drop the view in the correct class  🤙🏻
 
-#### Code
+#### Programmatically
+Just initialize the color picker like one would initialize a `UIView`, and add it as a subview to your view hierarchy.
+
 ```swift
 import SwiftColorPicker
 
-let colorPickerView = ColorPickerView() //that's it 🎉
+class ViewController {
+    var colorPickerView: ColorPickerView!
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        colorPickerView = ColorPickerView(frame: CGRect(x: 0.0, y: 0.0, width: widthSize, height: heightSize)
+        view.addSubview(colorPickerView)
+    }
+
+}
 
 ```
 
-
 ### Delegate
-```ColorPickerViewDelegate``` is the delegate protocol that recognizes the tap gesture on a color. This is an option delegate, but if you need to know when the user selects a color you should implement it.
+`ColorPickerViewDelegate` is the delegate protocol that recognizes the tap gesture on a color. This is an option delegate, but if you need to know when the user selects a color you should implement it.
 
 ```swift
 
@@ -56,7 +123,7 @@ extension ViewController: ColorPickerViewDelegate {
     func colorPickerView(_ colorPickerView: ColorPickerView, didSelectItemAt indexPath: IndexPath) {
         // A color has been selected
     }
-    
+
     // This is an optional method
     func colorPickerView(_ colorPickerView: ColorPickerView, didDeselectItemAt indexPath: IndexPath) {
         // A color has been deselected
@@ -66,37 +133,59 @@ extension ViewController: ColorPickerViewDelegate {
 
 ```
 
-### Layout delegate
+### Layout
 
-Every developer can customize the color picker layout in the way to fit with their design. To do that you have to implement our layout delegate ```ColorPickerViewDelegateFlowLayout```
+Every developer can customize the color picker layout in the way to fit with their design. To do that you have to implement our layout delegate `ColorPickerViewDelegateFlowLayout`
 
 ```swift
 // Set the delegate 🙋🏻‍♂️
 colorPickerView.layoutDelegate = self
 
 // MARK: - ColorPickerViewDelegateFlowLayout
-@objc public protocol ColorPickerViewDelegateFlowLayout {
+extension ViewController: ColorPickerViewDelegate {
     
-    @objc optional func colorPickerView(_ colorPickerView: ColorPickerView, sizeForItemAt indexPath: IndexPath) -> CGSize
-    
-    @objc optional func colorPickerView(_ colorPickerView: ColorPickerView, minimumLineSpacingForSectionAt section: Int) -> CGFloat
-    
-    @objc optional func colorPickerView(_ colorPickerView: ColorPickerView, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat
-    
-    @objc optional func colorPickerView(_ colorPickerView: ColorPickerView, insetForSectionAt section: Int) -> UIEdgeInsets
+    // ------------------------------------------------------------------
+    // All these methods are optionals, your are not to implement them 🖖🏻
+    // ------------------------------------------------------------------
+
+    func colorPickerView(_ colorPickerView: ColorPickerView, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        // The size for each cell
+        // 👉🏻 WIDTH AND HEIGHT MUST BE EQUALS!
+    }
+
+    func colorPickerView(_ colorPickerView: ColorPickerView, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        // 
+    }
+
+    func colorPickerView(_ colorPickerView: ColorPickerView, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        //
+    }
+
+    func colorPickerView(_ colorPickerView: ColorPickerView, insetForSectionAt section: Int) -> UIEdgeInsets {
+        // Inset used aroud the view
+    }
+
 }
 
 ```
 
-## Author
+## Project Details
 
-* Andrea Antonioni ([@andrea_anto97](https://twitter.com/andrea_anto97)), antonioni@igenius.net 
+### Requirements
+ * Swift 3.0
+ * Xcode 8.0+
+ * iOS 8.0+
 
-## Contributing
+### Contributing
 Feel free to collaborate with ideas 💭 , issues ⁉️ and/or pull requests 🔃.
 
 **P.S.** If you use SwiftColorPicker in your app we would love to hear about it! 😉
-## License
+
+### Author
+
+* Andrea Antonioni ([@andrea_anto97](https://twitter.com/andrea_anto97)), antonioni@igenius.net 
+
+### License
 
 > Copyright (c) 2017 iGenius Srl
 
