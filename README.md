@@ -8,21 +8,21 @@
 SwiftColorPicker is a fantastic color picker 🎨 written in Swift. Developers can use our color picker just like we do in [crystal.io](https://crystal.io) or they can customize it with all the available features .
 
 ## Table of Contents
-* **Documentation**
-⋅⋅* Colors
-⋅⋅* Style
-⋅⋅* Other features
+* [**Documentation**](#documentation)
+    * Colors
+    * Style
+    * Other features
 * **Installation**
-⋅⋅* Example
+    * Example
 * **Getting Started**
-⋅⋅* ColorPickerView
-⋅⋅* Delegate
-⋅⋅* Layout
+    * ColorPickerView
+    * Delegate
+    * Layout
 * **Project Details**
-⋅⋅* Requirements
-⋅⋅* Contributing
-⋅⋅* Author
-⋅⋅* Licence
+    * Requirements
+    * Contributing
+    * Author
+    * Licence
 
 ## Documentation
 ### Colors
@@ -38,17 +38,17 @@ But if you don't like them, you are free to use your own colors 🖍:
 
 ### Style
 * **style** ```enum```: look and feel of color picker cells
-..* **circle**
+    * **circle**
 [image]
 
-..* **square**
+    * **square**
 [image]
 
 * **selectionStyle** ```enum```: style applied when a color is selected
-..* **check**
+    * **check**
 [image]
 
-..* **none**
+    * **none**
 [image]
 
 ### Other features
