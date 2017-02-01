@@ -9,20 +9,20 @@ SwiftColorPicker is a fantastic color picker 🎨 written in Swift. Developers c
 
 ## Table of Contents
 * [**Documentation**](#documentation)
-    * Colors
-    * Style
-    * Other features
-* **Installation**
-    * Example
-* **Getting Started**
-    * ColorPickerView
-    * Delegate
-    * Layout
-* **Project Details**
-    * Requirements
-    * Contributing
-    * Author
-    * Licence
+    * [Colors](#colors)
+    * [Style](#style)
+    * [Other features](#other-features)
+* [**Installation**](#installation)
+    * [Example](#example)
+* [**Getting Started**](#getting-started)
+    * [ColorPickerView](#colorpickerview)
+    * [Delegate](#delegate)
+    * [Layout](#layout)
+* [**Project Details**](#project-details)
+    * [Requirements](#requirements)
+    * [Contributing](#contributing)
+    * [Author](#author)
+    * [License](#license)
 
 ## Documentation
 ### Colors
