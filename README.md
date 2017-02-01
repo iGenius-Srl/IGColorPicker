@@ -8,6 +8,8 @@
 
 SwiftColorPicker is a fantastic color picker 🎨 written in Swift. Developers can use our color picker just like we do in [crystal.io](https://crystal.io) or they can customize it with all the available features .
 
+![alt text](/Resources/wall-examples.png "Examples")
+
 ## Table of Contents
 * [**Documentation**](#documentation)
     * [Colors](#colors)
@@ -60,19 +62,10 @@ But if you don't like them, you are free to use your own colors 🖍:
 ### Other features
 * **preselectedIndex** ```Int?```: the index of the preselected color in the color picker
 
-```swift
-    colorPickerView.preselectedIndex = 3
-```
-[GIF]
-
 * **isSelectedColorTappable** ```Bool```: if true, the selected color can be deselected by a tap
 
 * **scrollToPreselectedIndex** ```Bool```: if true, the preselectedIndex is showed in the center of the color picker
 
-```swift
-    colorPickerView.scrollToPreselectedIndex = true
-```
-[GIF]
 
 ## Installation
 
@@ -160,11 +153,11 @@ extension ViewController: ColorPickerViewDelegate {
     }
 
     func colorPickerView(_ colorPickerView: ColorPickerView, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        // 
+        // Space between cells
     }
 
     func colorPickerView(_ colorPickerView: ColorPickerView, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        //
+        // Space between rows
     }
 
     func colorPickerView(_ colorPickerView: ColorPickerView, insetForSectionAt section: Int) -> UIEdgeInsets {
