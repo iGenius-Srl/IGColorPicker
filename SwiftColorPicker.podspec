@@ -4,7 +4,7 @@ Pod::Spec.new do |s|
   s.summary          = 'A customizable color picker for iOS in Swift'
 
   s.description      = <<-DESC
-                        SwiftColorPicker is a fantastic color picker written in Swift. Developers can use our color picker just like we do in crystal.io or thay can customize it with all the available features.
+                        IGColorPicker is a fantastic color picker written in Swift. Developers can use our color picker just like we do in crystal.io or thay can customize it with all the available features.
                        DESC
 
   s.homepage         = 'https://github.com/iGenius-Srl/SwiftColorPicker'
