@@ -1,4 +1,4 @@
-# SwiftColorPicker
+# SwiftColorPicker (`pod IGColorPicker`)
 
 
 [![Version](https://img.shields.io/cocoapods/v/SwiftColorPicker.svg?style=flat)](http://cocoapods.org/pods/SwiftColorPicker)
