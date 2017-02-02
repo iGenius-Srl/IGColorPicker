@@ -1,0 +1,6 @@
+framework module IGColorPicker {
+  umbrella header "IGColorPicker-umbrella.h"
+
+  export *
+  module * { export * }
+}
