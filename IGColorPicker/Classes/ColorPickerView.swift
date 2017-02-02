@@ -47,6 +47,10 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     open var layoutDelegate: ColorPickerViewDelegateFlowLayout?
     /// The object that acts as the delegate for the color picker
     open var delegate: ColorPickerViewDelegate?
+    /// The index of the selected color in the color picker 
+    open var indexOfSelectedColor: Int? {
+        return indexSelectedColor
+    }
     /// The index of the preselected color in the color picker
     open var preselectedIndex: Int? = nil {
         didSet {
@@ -55,9 +59,9 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
                 print("ERROR ColorPickerView - preselectedItem out of colors range")
                 return
             }
-            indexOfSelectedColor = preselectedIndex
+            indexSelectedColor = preselectedIndex
             
-            collectionView.selectItem(at: IndexPath(item: indexOfSelectedColor!, section: 0), animated: false, scrollPosition: .centeredHorizontally)
+            collectionView.selectItem(at: IndexPath(item: indexSelectedColor!, section: 0), animated: false, scrollPosition: .centeredHorizontally)
         }
     }
     /// If true, the selected color can be deselected by a tap
@@ -70,7 +74,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     open var selectionStyle: ColorPickerViewSelectStyle = .check
     
     // MARK: - Private properties
-    fileprivate var indexOfSelectedColor: Int?
+    fileprivate var indexSelectedColor: Int?
     fileprivate lazy var collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
@@ -131,7 +135,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         
         guard selectionStyle == .check else { return }
         
-        guard indexPath.item == indexOfSelectedColor else {
+        guard indexPath.item == indexSelectedColor else {
             colorPickerCell.checkbox.setCheckState(.unchecked, animated: false)
             return
         }
@@ -144,21 +148,21 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let colorPickerCell = collectionView.cellForItem(at: indexPath) as! ColorPickerCell
         
-        if indexPath.item == indexOfSelectedColor, !isSelectedColorTappable {
+        if indexPath.item == indexSelectedColor, !isSelectedColorTappable {
             return
         }
         
         if selectionStyle == .check {
             
-            if indexPath.item == indexOfSelectedColor {
+            if indexPath.item == indexSelectedColor {
                 if isSelectedColorTappable {
-                    indexOfSelectedColor = nil
+                    indexSelectedColor = nil
                     colorPickerCell.checkbox.setCheckState(.unchecked, animated: true)
                 }
                 return
             }
             
-            indexOfSelectedColor = indexPath.item
+            indexSelectedColor = indexPath.item
             
             colorPickerCell.checkbox.tintColor = colors[indexPath.item].isWhiteText ? .white : .black
             colorPickerCell.checkbox.setCheckState((colorPickerCell.checkbox.checkState == .checked) ? .unchecked : .checked, animated: true)
