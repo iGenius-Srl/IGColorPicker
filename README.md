@@ -1,10 +1,8 @@
 # IGColorPicker
 
-
-[![Version](https://img.shields.io/cocoapods/v/IGColorPicker.svg?style=flat)](http://cocoapods.org/pods/IGColorPicker)
-<img src="https://img.shields.io/badge/language-swift-orange.svg" alt="Language: Swift">
-[![License](https://img.shields.io/cocoapods/l/IGColorPicker.svg?style=flat)](http://cocoapods.org/pods/IGColorPicker)
-[![Platform](https://img.shields.io/cocoapods/p/IGColorPicker.svg?style=flat)](http://cocoapods.org/pods/IGColorPicker)
+<img src="https://img.shields.io/badge/language-swift%203-orange.svg" alt="Language: Swift">
+<img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="License: MIT">
+<img src="https://img.shields.io/badge/platform-iOS-000000.svg" alt="Platform: iOS">
 
 IGColorPicker is a fantastic color picker 🎨 written in Swift. Developers can use our color picker just like we do in [crystal.io](https://crystal.io) or they can customize it with all the available features .
 
@@ -12,20 +10,20 @@ IGColorPicker is a fantastic color picker 🎨 written in Swift. Developers can 
 
 ## Table of Contents
 * [**Documentation**](#documentation)
-* [Colors](#colors)
-* [Style](#style)
-* [Other features](#other-features)
+  * [Colors](#colors)
+  * [Style](#style)
+  * [Other features](#other-features)
 * [**Installation**](#installation)
-* [Example](#example)
+  * [Example](#example)
 * [**Getting Started**](#getting-started)
-* [ColorPickerView](#colorpickerview)
-* [Delegate](#delegate)
-* [Layout](#layout)
+  * [ColorPickerView](#colorpickerview)
+  * [Delegate](#delegate)
+  * [Layout](#layout)
 * [**Project Details**](#project-details)
-* [Requirements](#requirements)
-* [Contributing](#contributing)
-* [Author](#author)
-* [License](#license)
+  * [Requirements](#requirements)
+  * [Contributing](#contributing)
+  * [Author](#author)
+  * [License](#license)
 
 ## Documentation
 ### Colors
@@ -42,22 +40,22 @@ colorPickerView.colors = [UIColor.red, UIColor.yellow, UIColor.green, UIColor.bl
 
 ### Style
 * **style** ```enum```: look and feel of color picker cells
-* **circle**
+  * **circle**
 
-![alt text](/Resources/Circle.png "Circle style")
+    ![alt text](/Resources/Circle.png "Circle style")
 
-* **square**
+  * **square**
 
-![alt text](/Resources/Square.png "Square style")
+    ![alt text](/Resources/Square.png "Square style")
 
 * **selectionStyle** ```enum```: style applied when a color is selected
-* **check**
+  * **check**
 
-![alt text](/Resources/Check.png "Check selection style")
+    ![alt text](/Resources/Check.png "Check selection style")
 
-* **none**
+  * **none**
 
-![alt text](/Resources/None.png "None selection style")
+    ![alt text](/Resources/None.png "None selection style")
 
 ### Other features
 * **preselectedIndex** ```Int?```: the index of the preselected color in the color picker
@@ -95,14 +93,14 @@ Just initialize the color picker like one would initialize a `UIView`, and add i
 import IGColorPicker
 
 class ViewController {
-var colorPickerView: ColorPickerView!
+  var colorPickerView: ColorPickerView!
 
-override func viewDidLoad() {
-super.viewDidLoad()
+  override func viewDidLoad() {
+    super.viewDidLoad()
 
-colorPickerView = ColorPickerView(frame: CGRect(x: 0.0, y: 0.0, width: widthSize, height: heightSize)
-view.addSubview(colorPickerView)
-}
+    colorPickerView = ColorPickerView(frame: CGRect(x: 0.0, y: 0.0, width: widthSize, height: heightSize)
+    view.addSubview(colorPickerView)
+  }
 
 }
 
@@ -119,14 +117,14 @@ colorPickerView.delegate = self
 // MARK: - ColorPickerViewDelegate
 extension ViewController: ColorPickerViewDelegate {
 
-func colorPickerView(_ colorPickerView: ColorPickerView, didSelectItemAt indexPath: IndexPath) {
-// A color has been selected
-}
+  func colorPickerView(_ colorPickerView: ColorPickerView, didSelectItemAt indexPath: IndexPath) {
+    // A color has been selected
+  }
 
-// This is an optional method
-func colorPickerView(_ colorPickerView: ColorPickerView, didDeselectItemAt indexPath: IndexPath) {
-// A color has been deselected
-}
+  // This is an optional method
+  func colorPickerView(_ colorPickerView: ColorPickerView, didDeselectItemAt indexPath: IndexPath) {
+    // A color has been deselected
+  }
 
 }
 
@@ -143,26 +141,26 @@ colorPickerView.layoutDelegate = self
 // MARK: - ColorPickerViewDelegateFlowLayout
 extension ViewController: ColorPickerViewDelegate {
 
-// ------------------------------------------------------------------
-// All these methods are optionals, your are not to implement them 🖖🏻
-// ------------------------------------------------------------------
+  // ------------------------------------------------------------------
+  // All these methods are optionals, your are not to implement them 🖖🏻
+  // ------------------------------------------------------------------
 
-func colorPickerView(_ colorPickerView: ColorPickerView, sizeForItemAt indexPath: IndexPath) -> CGSize {
-// The size for each cell
-// 👉🏻 WIDTH AND HEIGHT MUST BE EQUALS!
-}
+  func colorPickerView(_ colorPickerView: ColorPickerView, sizeForItemAt indexPath: IndexPath) -> CGSize {
+    // The size for each cell
+    // 👉🏻 WIDTH AND HEIGHT MUST BE EQUALS!
+  }
 
-func colorPickerView(_ colorPickerView: ColorPickerView, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-// Space between cells
-}
+  func colorPickerView(_ colorPickerView: ColorPickerView, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+    // Space between cells
+  }
 
-func colorPickerView(_ colorPickerView: ColorPickerView, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-// Space between rows
-}
+  func colorPickerView(_ colorPickerView: ColorPickerView, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+    // Space between rows
+  }
 
-func colorPickerView(_ colorPickerView: ColorPickerView, insetForSectionAt section: Int) -> UIEdgeInsets {
-// Inset used aroud the view
-}
+  func colorPickerView(_ colorPickerView: ColorPickerView, insetForSectionAt section: Int) -> UIEdgeInsets {
+    // Inset used aroud the view
+  }
 
 }
 
