@@ -1,0 +1,14 @@
+diff --git a/.codeclimate.yml b/.codeclimate.yml
+index e69de29..f3c2a9b 100644
+--- a/.codeclimate.yml
++++ b/.codeclimate.yml
+@@ -0,0 +1,7 @@
++---
++engines:
++  fixme:
++    enabled: true
++	 exclude_paths: 
++		- b23211ba335b5718f6e05d50a2df04d7
++ratings:
++  paths: []
++exclude_paths: []
