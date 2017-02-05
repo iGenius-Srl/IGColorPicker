@@ -1,10 +1,12 @@
-# IGColorPicker
+![alt text](/Resources/Logo.png "IGColorPicker")
 
-<img src="https://img.shields.io/badge/language-swift%203-orange.svg" alt="Language: Swift">
-<img src="https://img.shields.io/badge/license-MIT-lightgrey.svg" alt="License: MIT">
-<img src="https://img.shields.io/badge/platform-iOS-000000.svg" alt="Platform: iOS">
+<p align="center">
+<img src="https://img.shields.io/badge/language-swift%203-orange.svg" alt="Language: Swift 3">
+<img src="https://img.shields.io/badge/license-MIT-000000.svg" alt="License: MIT">
+<img src="https://img.shields.io/badge/platform-iOS-blue.svg" alt="Platform: iOS">
+</p>
 
-IGColorPicker is a fantastic color picker 🎨 written in Swift. Developers can use our color picker just like we do in [crystal.io](https://crystal.io) or they can customize it with all the available features .
+IGColorPicker is a fantastic color picker 🎨 written in Swift. Developers can use our color picker just like we do in [crystal.io](https://crystal.io) or they can customize it with all the available features.
 
 ![alt text](/Resources/wall-examples.png "Examples")
 
