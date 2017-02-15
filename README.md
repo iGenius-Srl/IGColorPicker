@@ -141,7 +141,7 @@ Every developer can customize the color picker layout in the way to fit with the
 colorPickerView.layoutDelegate = self
 
 // MARK: - ColorPickerViewDelegateFlowLayout
-extension ViewController: ColorPickerViewDelegate {
+extension ViewController: ColorPickerViewDelegateFlowLayout {
 
   // ------------------------------------------------------------------
   // All these methods are optionals, your are not to implement them 🖖🏻
