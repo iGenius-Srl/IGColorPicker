@@ -100,7 +100,7 @@ class ViewController {
   override func viewDidLoad() {
     super.viewDidLoad()
 
-    colorPickerView = ColorPickerView(frame: CGRect(x: 0.0, y: 0.0, width: widthSize, height: heightSize)
+    colorPickerView = ColorPickerView(frame: CGRect(x: 0.0, y: 0.0, width: widthSize, height: heightSize))
     view.addSubview(colorPickerView)
   }
 
