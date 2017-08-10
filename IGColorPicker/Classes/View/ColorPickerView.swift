@@ -49,19 +49,22 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     open weak var delegate: ColorPickerViewDelegate?
     /// The index of the selected color in the color picker 
     open var indexOfSelectedColor: Int? {
-        return indexSelectedColor
+        return _indexOfSelectedColor
     }
     /// The index of the preselected color in the color picker
-    open var preselectedIndex: Int? = nil {
+    open var preselectedIndex: Int? {
         didSet {
-            guard let index = preselectedIndex else { return }
-            guard index >= 0, colors.indices.contains(index) else {
-                print("ERROR ColorPickerView - preselectedItem out of colors range")
-                return
+            if let index = preselectedIndex {
+                
+                guard index >= 0, colors.indices.contains(index) else {
+                    print("ERROR ColorPickerView - preselectedItem out of colors range")
+                    return
+                }
+                
+                _indexOfSelectedColor = index
+                
+                collectionView.selectItem(at: IndexPath(item: index, section: 0), animated: false, scrollPosition: .centeredHorizontally)
             }
-            indexSelectedColor = preselectedIndex
-            
-            collectionView.selectItem(at: IndexPath(item: indexSelectedColor!, section: 0), animated: false, scrollPosition: .centeredHorizontally)
         }
     }
     /// If true, the selected color can be deselected by a tap
@@ -74,7 +77,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     open var selectionStyle: ColorPickerViewSelectStyle = .check
     
     // MARK: - Private properties
-    fileprivate var indexSelectedColor: Int?
+    fileprivate var _indexOfSelectedColor: Int?
     fileprivate lazy var collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
@@ -103,7 +106,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         self.addConstraint(NSLayoutConstraint(item: collectionView, attribute: .trailing, relatedBy: .equal, toItem: self, attribute: .trailing, multiplier: 1.0, constant: 0))
         
         // Check on scrollToPreselectedIndex
-        if let preselectedIndex = preselectedIndex, !scrollToPreselectedIndex {
+        if preselectedIndex != nil, !scrollToPreselectedIndex {
             // Scroll to the first color
             collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .top, animated: false)
         }
@@ -135,7 +138,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         
         guard selectionStyle == .check else { return }
         
-        guard indexPath.item == indexSelectedColor else {
+        guard indexPath.item == _indexOfSelectedColor else {
             colorPickerCell.checkbox.setCheckState(.unchecked, animated: false)
             return
         }
@@ -148,21 +151,21 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let colorPickerCell = collectionView.cellForItem(at: indexPath) as! ColorPickerCell
         
-        if indexPath.item == indexSelectedColor, !isSelectedColorTappable {
+        if indexPath.item == _indexOfSelectedColor, !isSelectedColorTappable {
             return
         }
         
         if selectionStyle == .check {
             
-            if indexPath.item == indexSelectedColor {
+            if indexPath.item == _indexOfSelectedColor {
                 if isSelectedColorTappable {
-                    indexSelectedColor = nil
+                    _indexOfSelectedColor = nil
                     colorPickerCell.checkbox.setCheckState(.unchecked, animated: true)
                 }
                 return
             }
             
-            indexSelectedColor = indexPath.item
+            _indexOfSelectedColor = indexPath.item
             
             colorPickerCell.checkbox.tintColor = colors[indexPath.item].isWhiteText ? .white : .black
             colorPickerCell.checkbox.setCheckState((colorPickerCell.checkbox.checkState == .checked) ? .unchecked : .checked, animated: true)
@@ -180,9 +183,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         }
         
         if selectionStyle == .check {
-            
             oldColorCell.checkbox.setCheckState(.unchecked, animated: true)
-            
         }
         
         delegate?.colorPickerView?(self, didDeselectItemAt: indexPath)
@@ -191,31 +192,32 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     // MARK: - UICollectionViewDelegateFlowLayout
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if let layoutDelegate = layoutDelegate, let sizeForItemAt = layoutDelegate.colorPickerView?(self, sizeForItemAt: indexPath) {
+        if let layoutDelegate = layoutDelegate,
+            let sizeForItemAt = layoutDelegate.colorPickerView?(self, sizeForItemAt: indexPath) {
             return sizeForItemAt
         }
-        return CGSize(width: 48, height: 48)
+        return DefaultValues.cellSize
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         if let layoutDelegate = layoutDelegate, let minimumLineSpacingForSectionAt = layoutDelegate.colorPickerView?(self, minimumLineSpacingForSectionAt: section) {
             return minimumLineSpacingForSectionAt
         }
-        return 0
+        return DefaultValues.minimumLineSpacingForSectionAt
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         if let layoutDelegate = layoutDelegate, let minimumInteritemSpacingForSectionAt = layoutDelegate.colorPickerView?(self, minimumInteritemSpacingForSectionAt: section) {
             return minimumInteritemSpacingForSectionAt
         }
-        return 0
+        return DefaultValues.minimumInteritemSpacingForSectionAt
     }
     
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         if let layoutDelegate = layoutDelegate, let insetForSectionAt = layoutDelegate.colorPickerView?(self, insetForSectionAt: section) {
             return insetForSectionAt
         }
-        return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
+        return DefaultValues.insets
     }
     
 }
