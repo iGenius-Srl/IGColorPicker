@@ -44,9 +44,9 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         }
     }
     /// The object that acts as the layout delegate for the color picker
-    open var layoutDelegate: ColorPickerViewDelegateFlowLayout?
+    open weak var layoutDelegate: ColorPickerViewDelegateFlowLayout?
     /// The object that acts as the delegate for the color picker
-    open var delegate: ColorPickerViewDelegate?
+    open weak var delegate: ColorPickerViewDelegate?
     /// The index of the selected color in the color picker 
     open var indexOfSelectedColor: Int? {
         return indexSelectedColor
