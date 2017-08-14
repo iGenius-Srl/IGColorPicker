@@ -178,6 +178,11 @@ extension ViewController: ColorPickerViewDelegateFlowLayout {
 ### Contributing
 Feel free to collaborate with ideas 💭 , issues ⁉️ and/or pull requests 🔃.
 
+Here is a list of ToDo about bug fix and new features you can work on:
+* Custom check size
+* Support to custom view in `ColorPickerViewSelectStyle`
+* Support custom style in `ColorPickerViewStyle`
+
 **P.S.** If you use IGColorPicker in your app we would love to hear about it! 😉
 
 ### Author

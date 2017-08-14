@@ -188,7 +188,6 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         colorPickerCell.checkbox.setCheckState(.checked, animated: false)
     }
     
-    // TODO: - This method need to be refactored in order to be more readable and expressive
     public func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         self._selectColor(at: indexPath, animated: true)
     }
