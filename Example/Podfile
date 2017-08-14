@@ -1,12 +1,9 @@
+platform :ios, '8.0'
+
 use_frameworks!
 
 target 'IGColorPicker_Example' do
   pod 'IGColorPicker', :path => '../'
-  pod 'M13Checkbox', '~> 2.2.0'
+  pod ‘M13Checkbox’, :git => 'https://github.com/andreaantonioni/M13Checkbox.git', :branch => ‘swift-4’
 
-  target 'IGColorPicker_Tests' do
-    inherit! :search_paths
-
-    
-  end
 end
