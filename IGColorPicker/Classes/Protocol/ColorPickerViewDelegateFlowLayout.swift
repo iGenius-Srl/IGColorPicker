@@ -10,7 +10,7 @@
 
 import Foundation
 
-@objc public protocol ColorPickerViewDelegateFlowLayout {
+@objc public protocol ColorPickerViewDelegateFlowLayout: class {
     
     @objc optional func colorPickerView(_ colorPickerView: ColorPickerView, sizeForItemAt indexPath: IndexPath) -> CGSize
     

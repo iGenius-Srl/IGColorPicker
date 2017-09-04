@@ -32,6 +32,11 @@ extension UIColor {
     
     var isWhiteText: Bool {
         
+        // non-RGB color
+        if cgColor.numberOfComponents == 2 {
+            return 0.0...0.5 ~= cgColor.components!.first! ? true : false
+        }
+        
         let red = self.redValue * 255
         let green = self.greenValue * 255
         let blue = self.blueValue * 255
