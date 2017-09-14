@@ -129,6 +129,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
                 if isSelectedColorTappable {
                     _indexOfSelectedColor = nil
                     colorPickerCell.checkbox.setCheckState(.unchecked, animated: animated)
+                    delegate?.colorPickerView?(self, didDeselectItemAt: indexPath)
                 }
                 return
             }
