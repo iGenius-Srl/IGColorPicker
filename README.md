@@ -186,10 +186,6 @@ Here is a list of ToDo about bug fix and new features you can work on:
 
 **P.S.** If you use IGColorPicker in your app we would love to hear about it! 😉
 
-### Author
-
-* Andrea Antonioni ([@andrea_anto97](https://twitter.com/andrea_anto97)), antonioni@igenius.net 
-
 ### License
 
 > Copyright (c) 2017 iGenius Srl
