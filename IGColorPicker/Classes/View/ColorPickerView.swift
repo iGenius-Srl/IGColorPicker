@@ -57,6 +57,11 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
             if let index = preselectedIndex {
                 
                 guard index >= 0, colors.indices.contains(index) else {
+                    if _indexOfSelectedColor != nil {
+                        _indexOfSelectedColor = nil
+                        collectionView.reloadData()
+                    }
+                    
                     print("ERROR ColorPickerView - preselectedItem out of colors range")
                     return
                 }
@@ -129,6 +134,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
                 if isSelectedColorTappable {
                     _indexOfSelectedColor = nil
                     colorPickerCell.checkbox.setCheckState(.unchecked, animated: animated)
+                    delegate?.colorPickerView?(self, didDeselectItemAt: indexPath)
                 }
                 return
             }

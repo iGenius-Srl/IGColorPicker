@@ -24,7 +24,7 @@ class SquareColorPickerViewController: UIViewController, ColorPickerViewDelegate
         // Setup color picker
         colorPickerView.delegate = self
         colorPickerView.layoutDelegate = self
-        colorPickerView.isSelectedColorTappable = false
+        colorPickerView.isSelectedColorTappable = true
         colorPickerView.style = .square
         colorPickerView.selectionStyle = .check
         colorPickerView.backgroundColor = .clear
@@ -38,9 +38,14 @@ class SquareColorPickerViewController: UIViewController, ColorPickerViewDelegate
     // MARK: - ColorPickerViewDelegate
     
     func colorPickerView(_ colorPickerView: ColorPickerView, didSelectItemAt indexPath: IndexPath) {
+        print("select index \(indexPath.item)")
+        
         self.view.backgroundColor = colorPickerView.colors[indexPath.item]
     }
     
+    func colorPickerView(_ colorPickerView: ColorPickerView, didDeselectItemAt indexPath: IndexPath) {
+        print("deselect index \(indexPath.item)")
+    }
     
     // MARK: - ColorPickerViewDelegateFlowLayout
     
