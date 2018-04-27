@@ -28,12 +28,20 @@ class BrandColorViewController: UIViewController, ColorPickerViewDelegate, Color
         colorPickerView.delegate = self
         colorPickerView.layoutDelegate = self
         colorPickerView.style = .circle
+        colorPickerView.showBorders = true
         colorPickerView.selectionStyle = .check
         colorPickerView.isSelectedColorTappable = false
         colorPickerView.preselectedIndex = colorPickerView.colors.indices.first
         
         selectedColorView.backgroundColor = colorPickerView.colors.first
         
+        let testAction = UIBarButtonItem(barButtonSystemItem: .play, target: self, action: #selector(testActionDidTap))
+        self.navigationItem.rightBarButtonItem = testAction
+        
+    }
+    
+    @objc func testActionDidTap(){
+        colorPickerView.selectColor(at: Int(arc4random_uniform(UInt32(colorPickerView.colors.count))), animated: true)
     }
     
     override func didReceiveMemoryWarning() {

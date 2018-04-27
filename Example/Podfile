@@ -2,11 +2,18 @@ use_frameworks!
 
 target 'IGColorPicker_Example' do
   pod 'IGColorPicker', :path => '../'
-  pod 'M13Checkbox', '~> 2.2.0'
+  pod 'M13Checkbox'
 
   target 'IGColorPicker_Tests' do
     inherit! :search_paths
 
-    
   end
+end
+
+post_install do |installer|
+    installer.pods_project.targets.each do |target|
+        target.build_configurations.each do |config|
+            config.build_settings['SWIFT_VERSION'] = '4.0'
+        end
+    end
 end
