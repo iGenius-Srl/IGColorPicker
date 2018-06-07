@@ -43,6 +43,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
             }
         }
     }
+    
     /// The object that acts as the layout delegate for the color picker
     open weak var layoutDelegate: ColorPickerViewDelegateFlowLayout?
     /// The object that acts as the delegate for the color picker
@@ -75,6 +76,9 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     open var style: ColorPickerViewStyle = .circle
     /// Style applied when a color is selected
     open var selectionStyle: ColorPickerViewSelectStyle = .check
+    /// Show borders cell
+    open var showBorders = false
+
     
     // MARK: - Private properties
     
@@ -82,7 +86,7 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     fileprivate lazy var collectionView: UICollectionView = {
         
         let layout = UICollectionViewFlowLayout()
-        layout.scrollDirection = .horizontal
+        layout.scrollDirection = .vertical
         
         let collectionView = UICollectionView(frame: self.frame, collectionViewLayout: layout)
         collectionView.delegate = self
@@ -133,6 +137,10 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
                 return
             }
             
+            if let selected = indexOfSelectedColor {
+                self.collectionView(self.collectionView, didDeselectItemAt: IndexPath(item: selected, section: 0))
+            }
+            
             _indexOfSelectedColor = indexPath.item
             
             colorPickerCell.checkbox.tintColor = colors[indexPath.item].isWhiteText ? .white : .black
@@ -166,6 +174,10 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         
         if style == .circle {
             cell.layer.cornerRadius = cell.bounds.width / 2
+        }
+        
+        if showBorders {
+            cell.checkbox.hideBox = false
         }
         
         return cell

@@ -395,7 +395,7 @@ public class M13Checkbox: UIControl {
     // MARK: - UIControl
     //----------------------------
     
-    func handleLongPress(_ sender: UILongPressGestureRecognizer) {
+    @objc func handleLongPress(_ sender: UILongPressGestureRecognizer) {
         if sender.state == .began || sender.state == .changed {
             isSelected = true
         } else {
@@ -443,7 +443,7 @@ public class M13Checkbox: UIControl {
     }
     
     // The type of mark to display.
-    @IBInspectable public var markType: MarkType {
+    public var markType: MarkType {
         get {
             return manager.paths.markType
         }
