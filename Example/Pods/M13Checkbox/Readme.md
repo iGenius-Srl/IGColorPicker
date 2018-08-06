@@ -6,7 +6,7 @@
 
 Create beautiful, customizable, extendable, animated checkboxes on iOS. Completely configurable through interface builder. It has several built in animations, custom value support, a mixed state, checkmark and radio styles, circular and rounded rectangle box shapes, as well as full color customization. See the demo app to play with all the features. 
 
-##Table of Contents
+## Table of Contents
 
 * [**Recent Changes**](#recent-changes)
 * [**Documentation**](#documentation) 
@@ -28,7 +28,7 @@ Create beautiful, customizable, extendable, animated checkboxes on iOS. Complete
     * [License](license)
 
 
-##Recent Changes
+## Recent Changes
 
 - **2.2.0:** M13Checkbox has been converted to Swift 3.
 
@@ -39,45 +39,47 @@ Check out the demo app to change the properties of the checkbox and see the chan
 ### Animations
 
 - **Animation `enum`:** The possible animations for switching to and from the unchecked state.
+
     - **Stroke:**
     
-        ![Stroke Sample](Resources/Samples/Stroke Sample.gif)
+        ![Stroke Sample](Resources/Samples/Stroke%20Sample.gif)
     - **Fill:**
     
-        ![Fill Sample](Resources/Samples/Fill Sample.gif)
+        ![Fill Sample](Resources/Samples/Fill%20Sample.gif)
     - **Bounce (Stroke):**
     
-        ![Bounce Stroke Sample](Resources/Samples/Bounce Stroke Sample.gif)
+        ![Bounce Stroke Sample](Resources/Samples/Bounce%20Stroke%20Sample.gif)
     - **Bounce (Fill):**
     
-        ![Bounce Fill Sample](Resources/Samples/Bounce Fill Sample.gif)
+        ![Bounce Fill Sample](Resources/Samples/Bounce%20Fill%20Sample.gif)
     - **Expand (Stroke):**
     
-        ![Expand Stroke Sample](Resources/Samples/Expand Stroke Sample.gif)
+        ![Expand Stroke Sample](Resources/Samples/Expand%20Stroke%20Sample.gif)
     - **Expand (Fill):**
     
-        ![Expand Fill Sample](Resources/Samples/Expand Fill Sample.gif)
+        ![Expand Fill Sample](Resources/Samples/Expand%20Fill%20Sample.gif)
     - **Flat (Stroke):**
     
-        ![Flat Stroke Sample](Resources/Samples/Flat Stroke Sample.gif)
+        ![Flat Stroke Sample](Resources/Samples/Flat%20Stroke%20Sample.gif)
     - **Flat (Fill):**
     
-        ![Flat Fill Sample](Resources/Samples/Flat Fill Sample.gif)
+        ![Flat Fill Sample](Resources/Samples/Flat%20Fill%20Sample.gif)
     - **Spiral:**
     
-        ![Spiral Sample](Resources/Samples/Spiral Sample.gif)
+        ![Spiral Sample](Resources/Samples/Spiral%20Sample.gif)
     - **Fade (Stroke):**
     
-        ![Fade Stroke Sample](Resources/Samples/Fade Stroke Sample.gif)
+        ![Fade Stroke Sample](Resources/Samples/Fade%20Stroke%20Sample.gif)
     - **Fade (Fill):**
     
-        ![Fade Fill Sample](Resources/Samples/Fade Fill Sample.gif)
+        ![Fade Fill Sample](Resources/Samples/Fade%20Fill%20Sample.gif)
     - **Dot (Stroke):**
     
-        ![Dot Stroke Sample](Resources/Samples/Dot Stroke Sample.gif)
+        ![Dot Stroke Sample](Resources/Samples/Dot%20Stroke%20Sample.gif)
     - **Dot (Fill):**
     
-        ![Dot Fill Sample](Resources/Samples/Dot Fill Sample.gif)
+        ![Dot Fill Sample](Resources/Samples/Dot%20Fill%20Sample.gif)
+        
 - **stateChangeAnimation `Animation`:** The type of animation to preform when changing from the unchecked state to any other state.
 - **animationDuration `NSTimeInterval`:** The duration of the animation that occurs when the checkbox switches states. The default is 0.3 seconds.
 
@@ -91,9 +93,9 @@ Check out the demo app to change the properties of the checkbox and see the chan
 ### State
 
 - **CheckState `enum`:** The possible states the check can be in.
-    - **Unchecked:** No check is shown.
-    - **Checked:** A checkmark is shown.
-    - **Mixed:** A dash is shown.
+    - `unchecked` — No check is shown.
+    - `checked` — A checkmark is shown.
+    - `mixed` — A dash is shown.
 - **checkState `CheckState`:** The current state of the checkbox.
 - **setCheckState(newState: `CheckState`, animated: `Bool`):** Change the check state with the option of animating the change.
 - **toggleCheckState(animated: `Bool` = false):** Toggle the check state between `Unchecked` and `Checked` states.
@@ -101,11 +103,11 @@ Check out the demo app to change the properties of the checkbox and see the chan
 ### Appearance
 
 - **MarkType:** The possible shapes of the mark.
-    - **Checkmark:** The mark is a standard checkmark.
-    - **Radio:** The mark is a radio style fill.
+    - `checkmark` — The mark is a standard checkmark.
+    - `radio` — The mark is a radio style fill.
 - **BoxType:** The possible shapes of the box.
-    - **Circle:** The box is a circle.
-    - **Square:** The box is square with optional rounded corners.
+    - `circle` — The box is a circle.
+    - `square` — The box is square with optional rounded corners.
 - **tintColor:** The main color of the `Selected` and `Mixed` states for certain animations. 
 - **secondaryTintColor `UIColor`:** The color of the box in the unselected state.
 - **secondaryCheckmarkTintColor `UIColor`:** The color of the checkmark or radio for certain animations. (Mostly animations with a fill style.)
@@ -115,7 +117,6 @@ Check out the demo app to change the properties of the checkbox and see the chan
 - **cornerRadius `CGFloat`:** The corner radius of the box if the box type is `Square`.
 - **boxType `BoxType`:** The shape of the checkbox.
 - **hideBox `Bool`:** Wether or not to hide the box.
-
 
 <br>
 
@@ -182,29 +183,28 @@ view.addSubview(checkbox)
 
 <br>
 
-
-##Project Structure
+## Project Structure
 
 **M13Checkbox**
 The main interface for M13Checkbox is the `M13Checkbox` class. It is a subclass of `UIControl` and handles the configurable properties, as well as touch events. 
 
-**M13CheckboxManager**
-Each `M13Checkbox` references an instance of `M13CheckboxManager`, which controls the appearance and animations of its layers. The manager passes a set of layers to the `M13Checkbox`, which adds the layers to its layer hierarchy. The checkbox then asks the manager to perform the necessary animations on the layers to animate between states. Each animation type has its own subclass of `M13CheckboxManager`. To add an animation, subclass `M13CheckboxManager`, and add the animation type to the `Animation` enum, supporting the animation `Style` if applicable. Take a look at the existing managers to see what variables and functions to override.
+**M13CheckboxController**
+Each `M13Checkbox` references an instance of `M13CheckboxController`, which controls the appearance and animations of its layers. The controller passes a set of layers to the `M13Checkbox`, which adds the layers to its layer hierarchy. The checkbox then asks the controller to perform the necessary animations on the layers to animate between states. Each animation type has its own subclass of `M13CheckboxController`. To add an animation, subclass `M13CheckboxController`, and add the animation type to the `Animation` enum, supporting `AnimationStyle` if applicable. Take a look at the existing controllers to see what variables and functions to override.
 
-**M13CheckboxAnimationPresets**
-Each `M13CheckboxManager` references an instance of `M13CheckboxAnimationPresets`, which generates the animations that will be applied to layers during state transitions. The base class contains animations that are shared between multiple animation styles. An animation can subclass `M13CheckboxAnimationPresets` to generate new animations specific to the animation type.
+**M13CheckboxAnimationGenerator**
+Each `M13CheckboxController` references an instance of `M13CheckboxAnimationGenerator`, which generates the animations that will be applied to layers during state transitions. The base class contains animations that are shared between multiple animation styles. An animation can subclass `M13CheckboxAnimationGenerator` to generate new animations specific to the animation type.
 
-**M13CheckboxPathPresets**
-Each `M13CheckboxManager` references an instance of `M13CheckboxPathPresets`, which generates the paths that will be displayed by the layers. The base class contains paths that are shared between multiple animation styles, as well as some boilerplate code to determine which path to use. Some animations have a subclass of `M13CheckboxPathPresets` to add new paths specific to the animation type, or override existing paths to customize the look.
+**M13CheckboxPathGenerator**
+Each `M13CheckboxManager` references an instance of `M13CheckboxPathGenerator`, which generates the paths that will be displayed by the layers. The base class contains paths that are shared between multiple animation styles, as well as some boilerplate code to determine which path to use. Some animations have a subclass of `M13CheckboxPathGenerator` to add new paths specific to the animation type, or override existing paths to customize the look.
 
-`M13CheckboxPathPresets` calculates the positions of the points of the checkmark with more than just a basic scaled offset. This allows the checkmark to always look the same, not matter what size the checkbox is. The math contained in the `checkmarkLongArmBoxIntersectionPoint` and `checkmarkLongArmEndPoint` are a simplified version of a human readable solution. To see the math that went into creating these equations, check out the "Math.nb" or the "Math.pdf" in the "Other" folder.
+`M13CheckboxPathGenerator` calculates the positions of the points of the checkmark with more than just a basic scaled offset. This allows the checkmark to always look the same, not matter what size the checkbox is. The math contained in the `checkmarkLongArmBoxIntersectionPoint` and `checkmarkLongArmEndPoint` are a simplified version of a human readable solution. To see the math that went into creating these equations, check out the "Math.nb" or the "Math.pdf" in the "Other" folder.
 
 **M13Checkbox+IB**
 A shim that gives the ability to set the enum values of `M13Checkbox` in Interface Builder.
 
 <br>
 
-##Project Details
+## Project Details
 
 ### Requirements
 

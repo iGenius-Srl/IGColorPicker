@@ -1,8 +1,8 @@
+platform :ios, '8.3'
 use_frameworks!
 
 target 'IGColorPicker_Example' do
   pod 'IGColorPicker', :path => '../'
-  pod 'M13Checkbox', '~> 2.2.0'
 
   target 'IGColorPicker_Tests' do
     inherit! :search_paths
