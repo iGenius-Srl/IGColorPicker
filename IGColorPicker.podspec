@@ -12,9 +12,9 @@ s.license          = { :type => 'MIT', :file => 'LICENSE' }
 s.author           = { 'Andrea Antonioni' => 'andreaantonioni97@gmail.com' }
 s.source           = { :git => 'https://github.com/iGenius-Srl/IGColorPicker.git', :tag => s.version.to_s }
 
-s.ios.deployment_target = '8.0'
+s.ios.deployment_target = '8.3'
 
 s.source_files = 'IGColorPicker/Classes/**/*'
 
-s.dependency 'M13Checkbox', '~> 2.2.0'
+s.dependency 'M13Checkbox', '~> 3.2.0'
 end

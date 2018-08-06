@@ -1,6 +1,6 @@
 {
   "name": "IGColorPicker",
-  "version": "0.2.1",
+  "version": "0.3.0",
   "summary": "A customizable color picker for iOS in Swift",
   "description": "IGColorPicker is a fantastic color picker written in Swift. Developers can use our color picker just like we do in crystal.io or thay can customize it with all the available features.",
   "homepage": "https://github.com/iGenius-Srl/IGColorPicker",
@@ -13,15 +13,15 @@
   },
   "source": {
     "git": "https://github.com/iGenius-Srl/IGColorPicker.git",
-    "tag": "0.2.1"
+    "tag": "0.3.0"
   },
   "platforms": {
-    "ios": "8.0"
+    "ios": "8.3"
   },
   "source_files": "IGColorPicker/Classes/**/*",
   "dependencies": {
     "M13Checkbox": [
-      "~> 2.2.0"
+      "~> 3.2.0"
     ]
   }
 }
