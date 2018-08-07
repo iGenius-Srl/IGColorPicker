@@ -1,4 +1,4 @@
-![alt text](/Resources/Logo.png "IGColorPicker")
+![alt text](https://github.com/iGenius-Srl/IGColorPicker/blob/master/Resources/Logo.png "IGColorPicker")
 
 <p align="center">
 <img src="https://img.shields.io/badge/language-swift%204-orange.svg" alt="Language: Swift 4">
@@ -8,7 +8,7 @@
 
 IGColorPicker is a fantastic color picker 🎨 written in Swift. Developers can use our color picker just like we do in [crystal.io](https://crystal.io) or they can customize it with all the available features.
 
-![alt text](/Resources/wall-examples.png "Examples")
+![alt text](https://github.com/iGenius-Srl/IGColorPicker/blob/master/Resources/wall-examples.png "Examples")
 
 ## Table of Contents
 * [**Documentation**](#documentation)
@@ -31,7 +31,7 @@ IGColorPicker is a fantastic color picker 🎨 written in Swift. Developers can 
 ### Colors
 The color picker comes with our set of colors:
 
-![alt text](/Resources/Palette.png "Color Palette")
+![alt text](https://github.com/iGenius-Srl/IGColorPicker/blob/master/Resources/Palette.png "Color Palette")
 
 But if you don't like them, you are free to use your own colors 🖍:
 ```swift
@@ -44,20 +44,20 @@ colorPickerView.colors = [UIColor.red, UIColor.yellow, UIColor.green, UIColor.bl
 * **style** ```enum```: look and feel of color picker cells
   * **circle**
 
-    ![alt text](/Resources/Circle.png "Circle style")
+    ![alt text](https://github.com/iGenius-Srl/IGColorPicker/blob/master/Resources/Circle.png "Circle style")
 
   * **square**
 
-    ![alt text](/Resources/Square.png "Square style")
+    ![alt text](https://github.com/iGenius-Srl/IGColorPicker/blob/master/Resources/Square.png "Square style")
 
 * **selectionStyle** ```enum```: style applied when a color is selected
   * **check**
 
-    ![alt text](/Resources/Check.png "Check selection style")
+    ![alt text](https://github.com/iGenius-Srl/IGColorPicker/blob/master/Resources/Check.png "Check selection style")
 
   * **none**
 
-    ![alt text](/Resources/None.png "None selection style")
+    ![alt text](https://github.com/iGenius-Srl/IGColorPicker/blob/master/Resources/None.png "None selection style")
 
 ### Other features
 * **preselectedIndex** ```Int?```: the index of the preselected color in the color picker
