@@ -1,7 +1,7 @@
 ![alt text](/Resources/Logo.png "IGColorPicker")
 
 <p align="center">
-<img src="https://img.shields.io/badge/language-swift%203-orange.svg" alt="Language: Swift 3">
+<img src="https://img.shields.io/badge/language-swift%204-orange.svg" alt="Language: Swift 4">
 <img src="https://img.shields.io/badge/license-MIT-000000.svg" alt="License: MIT">
 <img src="https://img.shields.io/badge/platform-iOS-blue.svg" alt="Platform: iOS">
 </p>
@@ -171,9 +171,9 @@ extension ViewController: ColorPickerViewDelegateFlowLayout {
 ## Project Details
 
 ### Requirements
-* Swift 3.0
-* Xcode 8.0+
-* iOS 8.0+
+* Swift 4.1
+* Xcode 9.0+
+* iOS 8.3+
 
 ### Contributing
 Feel free to collaborate with ideas 💭 , issues ⁉️ and/or pull requests 🔃.
@@ -188,7 +188,7 @@ Here is a list of ToDo about bug fix and new features you can work on:
 
 ### License
 
-> Copyright (c) 2017 iGenius Srl
+> Copyright (c) 2018 iGenius Srl
 
 > Permission is hereby granted, free of charge, to any person obtaining a copy
 > of this software and associated documentation files (the "Software"), to deal
