@@ -1,6 +1,0 @@
-framework module Pods_IGColorPicker_Tests {
-  umbrella header "Pods-IGColorPicker_Tests-umbrella.h"
-
-  export *
-  module * { export * }
-}
