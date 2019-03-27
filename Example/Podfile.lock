@@ -1,7 +1,7 @@
 PODS:
   - IGColorPicker (0.4.2):
-    - M13Checkbox (~> 3.2.2)
-  - M13Checkbox (3.2.2)
+    - M13Checkbox (~> 3.3.2)
+  - M13Checkbox (3.3.2)
 
 DEPENDENCIES:
   - IGColorPicker (from `../`)
@@ -15,8 +15,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  IGColorPicker: 337041039b8807c2b6381878b46d778980e83b34
-  M13Checkbox: a8c2491cfbbca10797925fd0b9154a782bf40d89
+  IGColorPicker: 5d578b4d3bb2d51c541ecf14dd9737b53c0c55f2
+  M13Checkbox: d75dca81d61c9903e7f091f32b35a3254bc97dce
 
 PODFILE CHECKSUM: 4ebb9ec0d26d8739b0c18dc9faaa5462d18e8245
 
