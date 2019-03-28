@@ -48,7 +48,7 @@
 		9FAEF4144B69B4DE10AECF21 /* Pods-IGColorPicker_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGColorPicker_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-IGColorPicker_Example/Pods-IGColorPicker_Example.release.xcconfig"; sourceTree = "<group>"; };
 		B249C39F1D8ABCE8C406EED6 /* Pods-IGColorPicker_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGColorPicker_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IGColorPicker_Tests/Pods-IGColorPicker_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		B5CB5F41429ED1420D267465 /* Pods-IGColorPicker_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IGColorPicker_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IGColorPicker_Tests/Pods-IGColorPicker_Tests.release.xcconfig"; sourceTree = "<group>"; };
-		E6F4F3AABBDCF3FE8E4F59CF /* IGColorPicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = IGColorPicker.podspec; path = ../IGColorPicker.podspec; sourceTree = "<group>"; };
+		E6F4F3AABBDCF3FE8E4F59CF /* IGColorPicker.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = IGColorPicker.podspec; path = ../IGColorPicker.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,7 +470,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
@@ -486,7 +486,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
