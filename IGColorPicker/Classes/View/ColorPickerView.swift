@@ -134,6 +134,10 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
                 }
                 return
             }
+
+            if let selected = indexOfSelectedColor {
+                collectionView(self.collectionView, didDeselectItemAt: IndexPath(item: selected, section: 0))
+            }
             
             _indexOfSelectedColor = indexPath.item
             
