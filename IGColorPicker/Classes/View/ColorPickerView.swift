@@ -75,7 +75,9 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
     open var style: ColorPickerViewStyle = .circle
     /// Style applied when a color is selected
     open var selectionStyle: ColorPickerViewSelectStyle = .check
-    
+    /// Show selected cell's borders
+    open var showSelectedCellBorders: Bool = true
+
     // MARK: - Private properties
     
     fileprivate var _indexOfSelectedColor: Int?
@@ -166,6 +168,10 @@ open class ColorPickerView: UIView, UICollectionViewDelegate, UICollectionViewDa
         
         if style == .circle {
             cell.layer.cornerRadius = cell.bounds.width / 2
+        }
+
+        if showSelectedCellBorders {
+            cell.checkbox.hideBox = false
         }
         
         return cell
