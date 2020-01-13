@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
 s.name             = 'IGColorPicker'
-s.version          = '0.4.2'
+s.version          = '0.4.3'
 s.summary          = 'A customizable color picker for iOS in Swift'
 
 s.description      = <<-DESC
@@ -16,5 +16,5 @@ s.ios.deployment_target = '8.3'
 
 s.source_files = 'IGColorPicker/Classes/**/*'
 
-s.dependency 'M13Checkbox', '~> 3.2.0'
+s.dependency 'M13Checkbox'
 end
