@@ -12,6 +12,7 @@ s.license          = { :type => 'MIT', :file => 'LICENSE' }
 s.author           = { 'Andrea Antonioni' => 'andreaantonioni97@gmail.com' }
 s.source           = { :git => 'https://github.com/iGenius-Srl/IGColorPicker.git', :tag => s.version.to_s }
 
+s.swift_versions = ['4.2', '5']
 s.ios.deployment_target = '8.3'
 
 s.source_files = 'IGColorPicker/Classes/**/*'
